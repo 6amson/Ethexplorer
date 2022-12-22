@@ -75,8 +75,10 @@ nav{
 .navDiv_optionsDiv > ul > li{
  cursor: pointer;
 }
+
 .fa-ethereum{
   margin-right: 0.5em;
+  color: #ffffff;
 }
 
 .navDiv_logoDiv > span{
@@ -161,7 +163,7 @@ nav{
   border: solid black 2px;
 }
 .bodyDiv_input > input:focus {
-border: 3px solid red;
+border: 3px solid #9F496E;
 }
 
 .fa-magnifying-glass{
@@ -329,11 +331,114 @@ display: flex;
 
 
 
+/*   FOOTER    */
+
+.footer{
+  background-color: #647393;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 1.2em;
+  color: white;
+  padding: 2em;
+  font-size: 1.2em;
+}
+
+.footer1{
+  display: grid;
+}
+
+.footer1 > .navDiv_logoDiv{
+  font-size: 1.35em;
+}
+
+.footer2{
+  display: grid;
+  display: inline-block;
+}
+
+.footer2 >  div > ul{
+  list-style-type: none;
+  
+}
+
+.footer2 > div > ul > li{
+  margin-top: 1.3em;
+  margin-bottom: 0.1em;
+  cursor: pointer;
+}
+
+.footer3{
+  display: grid;
+  display: inline-block;
+}
+
+.footer3 >  div > ul{
+  list-style-type: none;
+  
+}
+
+.footer3 > div > ul > li{
+  margin-top: 1.3em;
+  margin-bottom: 0.1em;
+  cursor: pointer;
+}
+
+
+.footer4{
+  display: grid;
+}
+
+.footer4 >  div > ul{
+  list-style-type: none;
+  
+}
+
+.footer4 > div > ul > li{
+  margin-top: 1.3em;
+  margin-bottom: 0.1em;
+  cursor: pointer;
+}
+
+
+
+/*         LASTSECTION          */
+
+
+.lastSection{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.lastSection2 > p > i{
+cursor: pointer;
+}
+
+.lastSection1{
+  display: flex;
+  justify-content: space-between;
+  width: 12em;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.lastSection2{
+  display: flex;
+  width: 12em;
+  justify-content: space-evenly;
+  font-size: 1.2em;
+  color: #9F496E;
+}
+
+
 
 
 
 
 /*  +++++ MEDIA QUERIES +++++  */
+
+
 @media screen and (max-width: 892px){
   .navDiv_optionsDiv > ul{
     display: none;
@@ -381,6 +486,7 @@ display: flex;
   .fa-magnifying-glass{
    display: none;
   }
+ 
   
   .ethlogoSearch{
     width: fit-content;
@@ -526,7 +632,7 @@ display: flex;
   
   div > i{
     margin-right: 0.5em;
-    color: #9F496E;
+    color: #ffffff;
   }
 
   .bodyDiv_inputText > div{
@@ -548,5 +654,47 @@ display: flex;
     margin: auto;
     padding: 4em;
   }
+
+  .footer{
+    background-color: #647393;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    color: white;
+    padding: 2em;
+    font-size: 1.2em;
+  }
+
+  .footer4{
+    display: none;
+  }
+
+.footer3{
+  margin-bottom: 0;
+  
 }
+
+.lastSection{
+display: grid;
+gap: 2em;
+}
+
+
+.lastSection1{
+  display: flex;
+  justify-content: space-between;
+  width: 12em;
+  font-size: 1.2em;
+}
+
+.lastSection2{
+  display: flex;
+  width: 10em;
+  justify-content: space-evenly;
+  font-size: 1.2em;
+  color: #9F496E;
+}
+}
+
+
 
