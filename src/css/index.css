@@ -677,6 +677,7 @@ cursor: pointer;
 .lastSection{
 display: grid;
 gap: 2em;
+justify-content: center;
 }
 
 
