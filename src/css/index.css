@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500&display=swap');
+
+/*  
+ #2C272F dark brown
+ #9F496E burgundy
+ #F1ECE7 cream light
+ #647393 blue-ash
+*/
+
+*{
+  font-family: 'Sora', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+button{
+  font-weight: 400;
+  color: whitesmoke;
+  background-color: #9F496E;
+  padding: 0.8em;
+  box-shadow: 0.2em 0.2em black;
+  cursor: pointer;
+}
+
+.container{
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 0.5fr, 2fr, 2fr;
+  display: inline-block;
+  background-color:  #F1ECE7;
+}
+
+/*
+.navDiv{
+  width: 100vw;
+  border: solid 5px greenyellow;
+}
+*/
+nav{
+  color: whitesmoke;
+  display: flex;
+  height: 5em;
+  background: #647393;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+
+
+
+
+.navDiv_optionsDiv > ul{
+  display: flex;
+  list-style: none;
+  width: 22em;
+  justify-content: space-between;
+  font-weight: 200;
+}
+
+.navDiv_optionsDiv > ul > i{
+  margin-left: 0;
+  color: #9F496E;
+  padding-left: 0;
+  left: 1px;
+  position: relative;
+}
+
+.navDiv_optionsDiv > ul > li{
+ cursor: pointer;
+}
+.fa-ethereum{
+  margin-right: 0.5em;
+}
+
+.navDiv_logoDiv > span{
+  font-weight: bolder;
+  
+}
+
+.navDiv_HomeDiv{
+  position: relative;
+  font-weight: 200;
+}
+
+.navDiv_HomeDiv > span{
+  cursor: pointer;
+}
+
+.navDiv_HomeDiv > span:hover{
+  transition: 1s;
+}
+
+.homeBorderBottom{
+  position: absolute;
+  top: 1.3em;
+  left: 0.5em;
+  width: 2em;
+  height: 0.1em;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+
+/*  body style*/
+
+.bodyDiv{
+  display: grid;
+  border-top: solid 2px #ac1255;
+  
+  width: 100vw;
+  margin: 0;
+  height: 70%;
+  background-color: #ffffff ;
+
+}
+
+.bodyDivSub{
+  margin: auto;
+  margin-top: 4em;
+  text-align: center;
+}
+
+.bodyDiv_h1Text{
+  margin-bottom: 1.5em;
+}
+
+.bodyDiv_h1Text > h1{
+  color: #9F496E;
+  word-spacing: 0.1em;
+  font-size: 3em;
+  letter-spacing: 0.02em;
+}
+
+.bodyDiv_paraText > h3{
+  font-weight: 300;
+}
+
+
+.bodyDiv_input{
+  position: relative;
+  left: 3.4em;
+  margin-top: -2em;
+  margin-bottom: 1em;
+
+}
+
+.bodyDiv_input > input{
+  font-size: 1.5em;
+  width: 27em;
+  height: 2.9em;
+  padding: 0 1em 0 2.2em;
+  margin-left: 2.8em;
+  border-radius: 0 0.1em 0.1em 0;
+  display: flex;
+}
+.bodyDiv_input > input:focus {
+border: 3px solid red;
+}
+
+.fa-magnifying-glass{
+  position: absolute;
+  left: 4.5em;
+  top: 4.6em;
+  font-size: 1.3em;
+}
+
+.bodyDiv_input > input::placeholder{
+  font-size: 0.7em;
+}
+
+.ethlogoSearch{
+  width: 6em;
+  font-size: 1.3em;
+  font-weight: 500;
+  border: #000000 solid 2px;
+  height: 3.34em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-radius: 0.1em 0 0 0.1em;
+  padding-left: 2em;
+position: relative;
+left: -2.7em;
+top: 3.34em;
+}
+
+.bodyDiv_inputText{
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.bodyDiv_inputText > div > i{
+  margin-right: 0.5em;
+  color: #9F496E;
+}
+
+
+
+
+/*  INFO DISPLAY  */
+
+.infoDisplayDiv{
+  box-shadow: -0.2em 0 .4em grey;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  position: relative;
+  top: -7em;
+  gap: 2em;
+  column-gap: 4em;
+  width: max-content;
+  margin: auto;
+  padding: 1em;
+}
+
+.infoDisplayFirstDiv{
+
+width: fit-content;
+ margin: auto;
+ padding: 1em;
+}
+
+.infoDisplayPriceDiv{
+  font-weight: 400;
+  margin-bottom: 0.3em;
+}
+
+.infoDisplayValueDiv{
+font-weight: 600;
+display: flex;
+}
+
+.infoDisplayFirstDiv > i{
+  position: absolute;
+  margin-left: -1.2em;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  color: #9F496E;
+}
+
+.infoDisplayValueDiv1{
+  letter-spacing: 0.15em;
+  
+}
+
+.infoDisplayValueDiv2{
+  font-weight: 400;
+  color: red;
+  margin-left: 2em;
+  
+}
+
+.infoDisplayValueDiv2 > i{
+  margin-left: 0.5em;
+  color: red;
+}
+
+.vl {
+  border-left: 2px solid silver;
+  height: 12em;
+  position: absolute;
+  left: 33%;
+  margin-left: -3px;
+  top: 1em;
+}
+
+.vl2 {
+  border-left: 2px solid silver;
+  height: 12em;
+  position: absolute;
+  left: 68%;
+  margin-left: -3px;
+  top: 1em;
+}
+
+.vh {
+  border-bottom: 2px solid silver;
+  width: 15em;
+  position: absolute;
+  left: 2.2%;
+  margin-left: -3px;
+  top: 7em;
+}
+
+.vh2 {
+  border-bottom: 2px solid silver;
+  width: 15em;
+  position: absolute;
+  left: 36.8%;
+  margin-left: -3px;
+  top: 7em;
+}
+
+.vh3 {
+  border-bottom: 2px solid silver;
+  width: 15em;
+  position: absolute;
+  left: 71%;
+  margin-left: -3px;
+  top: 7em;
+}
+
+
+
+
+
+
+
+
+/*  +++++ MEDIA QUERIES +++++  */
+@media screen and (max-width: 892px){
+  .navDiv_optionsDiv > ul{
+    display: none;
+  }
+
+  .fa-magnifying-glass{
+    display: none;
+  }
+
+  .navDiv_HomeDiv > span{
+    display: none;
+  }
+
+  .homeBorderBottom{
+    display: none;
+  }
+
+  .bodyDiv_paraText > h3{
+    font-weight: 300;
+    font-size: 1.2em;
+    position: relative;
+    left: -0.1em;
+    
+  }
+
+  .bodyDiv_input{
+    position: relative;
+  }
+  
+  .bodyDiv_input > input{
+    font-size: 1.5em;
+    width: 20em;
+    height: 2em;
+    padding: 0 0.5em 0 1em;
+   position: relative;
+  left: 0.4em;
+    border-radius: 0 0.2em 0.2em 0;
+    display: flex;
+  }
+  
+  .bodyDiv_input > input::placeholder{
+    font-size: 0.7em;
+  }
+
+  .fa-magnifying-glass{
+   display: none;
+  }
+  
+  .ethlogoSearch{
+    width: fit-content;
+    font-size: 1em;
+    font-weight: 500;
+    border: #000000 solid 1px;
+    height: 3em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 0.2em 0 0 0.2em;
+    padding-left: 0.3em;
+    padding-right: 0.2em;
+    position: relative;
+    left: 1.1em;
+    top: 3em;
+  }
+  
+
+  .infoDisplayDiv{
+    box-shadow: -0.2em 0 .4em grey;
+    background-color: whitesmoke;
+    position: relative;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(6, 1fr);
+    position: relative;
+    top: -5em;
+    gap: 2em;
+    width: max-content;
+    margin: auto;
+    padding: 8em;
+  }
+
+  .vl, .vl2, .vh, .vh2, .vh3{
+    display: none;
+  }
+
+  .infoDisplayFirstDiv{
+    font-weight: 400;
+    margin-bottom: 0.3em;
+    border-bottom: 1px solid silver;
+  }
+
+  .bodyDiv_inputText{
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    font-weight: 400;
+  }
+  
+  .bodyDiv_inputText > div > i{
+    margin-right: 0.5em;
+    color: #9F496E;
+  }
+}
+
+
+@media screen and (max-width: 650px){
+  .bodyDiv_h1Text > h1{
+    color: #9F496E;
+    font-size: 1.3em;
+    position: relative;
+    right: 0.6em;
+  }
+
+  .navDiv_logoDiv > span{
+    font-weight: bolder;
+  }
+
+  .navDiv_buttonDiv > button{
+    position: relative;
+    right: 2em;
+    padding: 0.5em;
+  box-shadow: 0.2em 0.2em black;
+  }
+
+  .bodyDiv_paraText > h3{
+    font-weight: 300;
+    font-size: 1.2em;
+    position: relative;
+    left: 2.5em;
+    width: 16em;
+    
+  }
+
+  .bodyDiv_input{
+    position: relative;
+  }
+  
+  .bodyDiv_input > input{
+    font-size: 1.5em;
+    width: 14em;
+    height: 2em;
+    padding: 0 0.5em 0 1em;
+    margin-left: -0.1em;
+    border-radius: 0 0.2em 0.2em 0;
+    display: flex;
+  }
+  
+  .bodyDiv_input > input::placeholder{
+    font-size: 0.7em;
+  }
+  
+
+  .fa-magnifying-glass{
+    display: none;
+   }
+   
+  .ethlogoSearch{
+    width: fit-content;
+    font-size: 1em;
+    font-weight: 500;
+    border: #000000 solid 2px;
+    height: 3em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 0.2em 0 0 0.2em;
+    padding-left: 0.1em;
+    padding-right: 0.2em;
+  position: relative;
+  left: -3.2em;
+  top: 3em;
+  }
+
+  .bodyDiv_inputText{
+    display: flex;
+    justify-content: space-evenly;
+    width: inherit;
+    font-weight: 400;
+  }
+  
+  div > i{
+    margin-right: 0.5em;
+    color: #9F496E;
+  }
+
+  .bodyDiv_inputText > div{
+  padding: 0.5em;
+}
+
+
+  .infoDisplayDiv{
+    box-shadow: -0.2em 0 .4em grey;
+    background-color: whitesmoke;
+    position: relative;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(6, 1fr);
+    position: relative;
+    top: -5em;
+    gap: 2em;
+    width: max-content;
+    margin: auto;
+    padding: 4em;
+  }
+}
+
