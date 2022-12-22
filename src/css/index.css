@@ -32,6 +32,7 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   background-color:  #F1ECE7;
+  overflow: hidden;
 }
 
 /*
@@ -156,6 +157,7 @@ nav{
   margin-left: 2.8em;
   border-radius: 0 0.1em 0.1em 0;
   display: flex;
+  border: solid black 2px;
 }
 .bodyDiv_input > input:focus {
 border: 3px solid red;
