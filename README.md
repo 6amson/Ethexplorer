@@ -1,9 +1,9 @@
 # Ethexplorer 
 
 This website allows you to check for transactions, blocks and events on ethereum blockchain.
-It allows for users to vusualise the price, volume and other live market values in real time.
+It allows users to visualise the price, volume and other live market values in real time.
 
-### Infura is used as the api endpoints while coingecko API was used for the live market values. 
+### Infura is used as the api endpoints while coingecko API was used to obtain the live market values. 
 
 
 
