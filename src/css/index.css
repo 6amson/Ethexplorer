@@ -176,6 +176,9 @@ border: 3px solid red;
 }
 
 .ethlogoSearch{
+  cursor: pointer;
+  box-shadow: -0.15em 0.15em black;
+  color: white;
   width: 6em;
   font-size: 1.3em;
   font-weight: 500;
@@ -189,7 +192,10 @@ border: 3px solid red;
 position: relative;
 left: -2.7em;
 top: 3.34em;
+background-color: #9F496E;
 }
+
+
 
 .bodyDiv_inputText{
   display: flex;
@@ -222,6 +228,7 @@ top: 3.34em;
   width: max-content;
   margin: auto;
   padding: 1em;
+  border-radius: 0.2em;
 }
 
 .infoDisplayFirstDiv{
@@ -429,7 +436,17 @@ display: flex;
     margin-right: 0.5em;
     color: #9F496E;
   }
+
+  .infoDisplayFirstDivMGP{
+    margin-left: 0;
+  }
+
+  .infoDisplayFirstDivBlock{
+    margin-left: 0;
+  }
 }
+
+
 
 
 @media screen and (max-width: 650px){
@@ -525,7 +542,7 @@ display: flex;
     grid-template-columns:1fr;
     grid-template-rows: repeat(6, 1fr);
     position: relative;
-    top: -5em;
+    top: -16em;
     gap: 2em;
     width: max-content;
     margin: auto;
