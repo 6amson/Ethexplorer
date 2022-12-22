@@ -32,7 +32,7 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   background-color:  #F1ECE7;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /*
@@ -42,6 +42,7 @@ button{
 }
 */
 nav{
+  overflow-x: hidden;
   color: whitesmoke;
   display: flex;
   height: 5em;
@@ -111,8 +112,8 @@ nav{
 .bodyDiv{
   display: grid;
   border-top: solid 2px #ac1255;
-  
-  width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
   margin: 0;
   height: 70%;
   background-color: #ffffff ;
@@ -246,6 +247,14 @@ display: flex;
   font-size: 1.5em;
   margin-top: 0.5em;
   color: #9F496E;
+}
+
+.infoDisplayFirstDivBlock{
+  margin-left: 2em;
+}
+
+.infoDisplayFirstDivMGP{
+  margin-left: 2em;
 }
 
 .infoDisplayValueDiv1{

@@ -88,7 +88,7 @@ const Landingpage = () => {
                     </div>
                 </div>
 
-                <div className='infoDisplayFirstDiv'>
+                <div className='infoDisplayFirstDiv infoDisplayFirstDivBlock'>
                     <i class="fa-solid fa-cube"></i><div className='infoDisplayPriceDiv'><span>BLOCKS</span></div>
                     <div className='infoDisplayValueDiv'>
                         <div className='infoDisplayValueDiv1'>
@@ -127,7 +127,7 @@ const Landingpage = () => {
                     </div>
                 </div>
 
-                <div className='infoDisplayFirstDiv'>
+                <div className='infoDisplayFirstDiv infoDisplayFirstDivMGP'>
                     <i class="fa-solid fa-dollar-sign"></i><div className='infoDisplayPriceDiv'><span>MED. GAS PRICE</span></div>
                     <div className='infoDisplayValueDiv'>
                         <div className='infoDisplayValueDiv1'>
