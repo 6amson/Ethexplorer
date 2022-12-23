@@ -32,7 +32,6 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   overflow-x: hidden;
-
   background-color: black;
 }
 
