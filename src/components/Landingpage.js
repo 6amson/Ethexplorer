@@ -28,7 +28,7 @@ const Landingpage = () => {
             <div className='navDiv'>
                 <nav>
                     <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span>ETHEXPLORER</span></div>
-                    <div className='navDiv_HomeDiv'><span>Home</span><div className='homeBorderBottom'></div></div>
+                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDivSpan'>Home</span><div className='homeBorderBottom'></div></div>
                     <div className='navDiv_optionsDiv'>
                         <ul>
                             <li>Blockchain <i class="fa-solid fa-angle-down"></i></li>
@@ -48,9 +48,12 @@ const Landingpage = () => {
                     <div className='bodyDiv_h1Text'><h1>Ethereum <span>Blockchain</span> Explorer</h1></div>
                     <div className='bodyDiv_paraText'><h3>Get access to all transactions that occur on the ethereum blockchain.</h3></div>
                     <div className='bodyDiv_input' >
-                        <div className='ethlogoSearch'><i className="fa-brands fa-ethereum fa-ethereumlogo"></i><span>ETH</span>
-                        </div>
-                        <i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search by Address, Transaction, or Block"></input></div>
+                        
+                            <button className='ethlogoSearch'>ETH<i className="fa-brands fa-ethereum fa-ethereumlogo"></i></button>
+                        
+    
+                        <i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search by Address, Transaction, or Block"></input>
+                    </div>
                     <div className='bodyDiv_inputText'>
                         <div><i class="fa-solid fa-wallet"></i><span className='bodyDiv_searchText' id='bodyDiv_searchTextAdd'>Address</span></div>
                         <div><i class="fa-solid fa-cube"></i><span className='bodyDiv_searchText' id='bodyDiv_searchTextBlo'>Block Number</span></div>
@@ -148,7 +151,7 @@ const Landingpage = () => {
             <section>
                 <div className='footer'>
                     <div className='footer1'>
-                        <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span>ETHEXPLORER</span></div>
+                        <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span className='footerEth'>ETHEXPLORER</span></div>
                         <div><p><strong>ETHExplorer</strong> is a Blockchain platform for Ethereum.</p></div>
                         <div></div>
                     </div>

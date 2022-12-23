@@ -2,6 +2,8 @@ import { INFURA } from "../server/keys";
 import "../components/Landingpage";
 const { ethers } = require("ethers");
 
+//num.toExponential(0)
+
 
 
 
