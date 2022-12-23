@@ -44,7 +44,7 @@ const Landingpage = () => {
 
             <div className='bodyDiv'>
                 <div className='bodyDivSub'>
-                    <div className='bodyDiv_h1Text'><h1>Ethereum Blockchain Explorer</h1></div>
+                    <div className='bodyDiv_h1Text'><h1>Ethereum <span>Blockchain</span> Explorer</h1></div>
                     <div className='bodyDiv_paraText'><h3>Get access to all transactions that occur on the ethereum blockchain.</h3></div>
                     <div className='bodyDiv_input' >
                         <div className='ethlogoSearch'><i className="fa-brands fa-ethereum fa-ethereumlogo"></i><span>ETH</span>
