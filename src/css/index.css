@@ -143,12 +143,17 @@ nav{
 
 .bodyDiv_h1Text > h1{
   color: white;
- 
   word-spacing: 0.1em;
   font-size: 3em;
   letter-spacing: 0.02em;
+  text-shadow:
+       1px 1px 3px rgb(238, 238, 39),
+     -1px -1px 0 rgb(225, 42, 42),  
+      1px -1px 0 rgb(39, 61, 169),
+      -1px 1px 0 rgb(183, 57, 193),
+       1px 1px 0 #000;
 }
-
+/*
 .bodyDiv_h1Text > h1 > span{
   background-image: linear-gradient(43deg, #554e84 10%, #C850C0 35%, #f1b13e 51%, #ffffff 61%, #640dd4 66%);
   
@@ -156,7 +161,7 @@ nav{
     background-clip: text;
     -webkit-text-fill-color: transparent;
   
-}
+}*/
 
 
 
