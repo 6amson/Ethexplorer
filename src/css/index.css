@@ -141,6 +141,7 @@ nav{
 }
 
 .bodyDiv_h1Text > h1{
+  text-transform: uppercase;
   color: rgb(255, 255, 255);
   word-spacing: 0.1em;
   font-size: 3em;
