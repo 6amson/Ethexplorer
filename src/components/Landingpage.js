@@ -49,7 +49,7 @@ const Landingpage = () => {
                     <div className='bodyDiv_paraText'><h3>Get access to all transactions that occur on the ethereum blockchain.</h3></div>
                     <div className='bodyDiv_input' >
                         
-                            <button className='ethlogoSearch'>ETH<i className="fa-brands fa-ethereum fa-ethereumlogo"></i></button>
+                        <button className='ethlogoSearch'>ETH<i className="fa-brands fa-ethereum fa-ethereumlogo"></i></button>
                         
     
                         <i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search by Address, Transaction, or Block"></input>

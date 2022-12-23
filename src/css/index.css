@@ -177,9 +177,7 @@ nav{
   margin-bottom: 1em;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 0.3fr 1fr;
-  
-
+  grid-template-columns: 0.3fr 0.7fr;
 }
 
 .bodyDiv_input > input{
@@ -198,7 +196,7 @@ border: 3px solid #9F496E;
 
 .fa-magnifying-glass{
   position: absolute;
-  left: 10.2em;
+  left: 12em;
   top: 1.2em;
   font-size: 1.3em;
 }
@@ -507,10 +505,10 @@ cursor: pointer;
    display: none;
   }
  
-  
+  /*
   .ethlogoSearch{
  grid-template-columns: 0.3fr 0.7fr;
-  }
+  }*/
   
 
   .infoDisplayDiv{
@@ -576,7 +574,7 @@ cursor: pointer;
     position: relative;
     right: 1.2em;
     padding: 0.5em;
-  box-shadow: 0.2em 0.2em black;
+  
   }
 
   .bodyDiv_paraText > h3{
@@ -593,15 +591,30 @@ cursor: pointer;
 
   .bodyDiv_input{
     position: relative;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 0.3fr 0.66fr;
   }
+  /*
+  .bodyDiv_input{
+    border: solid 2px red;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.4fr 0.6fr;
+
+  }*/
   
   .bodyDiv_input > input{
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 0 0.5em 0 0.4em;
+    height: 3.1em;
   }
   
   .bodyDiv_input > input::placeholder{
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
   
 
@@ -631,6 +644,18 @@ cursor: pointer;
   padding: 0.5em;
 }
 
+.ethlogoSearch{
+  cursor: pointer;
+  background-color: #9F496E ;
+  border-radius: 0.3em 0 0 0.3em;
+  font-size: 1em;
+}
+
+.ethlogoSearch > i{
+font-size: 1.1em;
+ margin-left: 0.1em; 
+}
+
 
   .infoDisplayDiv{
     box-shadow: -0.2em 0 .4em grey;
@@ -644,6 +669,7 @@ cursor: pointer;
     gap: 2em;
     width: max-content;
     margin: auto;
+    
     padding: 4em;
   }
 
