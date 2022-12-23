@@ -28,7 +28,7 @@ const Landingpage = () => {
             <div className='navDiv'>
                 <nav>
                     <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span>ETHEXPLORER</span></div>
-                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDivSpan'>Home</span><div className='homeBorderBottom'></div></div>
+                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Home</span><div className='homeBorderBottom'></div></div>
                     <div className='navDiv_optionsDiv'>
                         <ul>
                             <li>Blockchain <i class="fa-solid fa-angle-down"></i></li>
