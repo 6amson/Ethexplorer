@@ -1,4 +1,5 @@
 import '../css/index.css'
+import '../server/server'
 
 
 
@@ -36,7 +37,7 @@ const Landingpage = () => {
                         </ul>
                     </div>
                     <div className='navDiv_buttonDiv'>
-                        <button>Connect Wallet</button>
+                        <button id='MetamaskBtn'>Connect Wallet</button>
                     </div>
                 </nav>
             </div>

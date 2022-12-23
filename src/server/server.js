@@ -12,6 +12,8 @@ let balance;
 const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${infura}`)
 
 
+
+
 //const connectBtn = document.getElementById('connectBtn')
 //const metamaskBtn = document.getElementById('MetamaskBtn')
 

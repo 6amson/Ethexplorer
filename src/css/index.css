@@ -32,8 +32,8 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   overflow-x: hidden;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%, #a14141 100%);
+
+  background-color: black;
 }
 
 /*
@@ -142,7 +142,7 @@ nav{
 }
 
 .bodyDiv_h1Text > h1{
-  color: white;
+  color: rgb(255, 255, 255);
   word-spacing: 0.1em;
   font-size: 3em;
   letter-spacing: 0.02em;
@@ -167,6 +167,7 @@ nav{
 
 .bodyDiv_paraText > h3{
   font-weight: 300;
+  color: white;
 }
 
 
@@ -230,6 +231,7 @@ background-color: #9F496E;
   width: inherit;
   font-weight: 400;
   cursor: pointer;
+  color: white;
 }
 
 .bodyDiv_inputText > div > i{
@@ -358,12 +360,12 @@ display: flex;
 /*   FOOTER    */
 
 .footer{
-  background-color: #647393;
+  background-color: #e1e3e6;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 1.2em;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 2em;
   font-size: 1.2em;
 }
