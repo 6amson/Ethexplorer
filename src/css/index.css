@@ -147,8 +147,8 @@ nav{
   font-size: 3em;
   letter-spacing: 0.02em;
   text-shadow:
-       1px 1px 3px rgb(238, 238, 39),
-     -1px -1px 0 rgb(225, 42, 42),  
+       1px 1px 3px rgb(0, 0, 0),
+     -1px -1px 0 rgb(0, 0, 0),  
       1px -1px 0 rgb(39, 61, 169),
       -1px 1px 0 rgb(183, 57, 193),
        1px 1px 0 #000;
