@@ -576,7 +576,6 @@ cursor: pointer;
 
 @media screen and (max-width: 650px){
   .bodyDiv_h1Text > h1{
-    color: #9F496E;
     font-size: 1.3em;
     position: relative;
     right: 0.6em;
