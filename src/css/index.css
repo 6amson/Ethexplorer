@@ -16,6 +16,18 @@
   box-sizing: border-box;
 }
 
+.errorMes > p{
+  color: red;
+  font-size: 1.2em;
+}
+
+.errorMes{
+  position: absolute;
+  left: 50%;
+  top: 57%;
+  z-index: 100;
+}
+
 
 button{
   font-weight: 400;
@@ -23,7 +35,8 @@ button{
   background-color: #9F496E;
   padding: 0.8em;
   cursor: pointer;
- 
+  outline: none;
+  border: none;
 }
 
 .container{
@@ -458,6 +471,34 @@ cursor: pointer;
   color: #9F496E;
 }
 
+/*   LOADER   */
+
+#loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+  opacity: 0;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 
 
 
@@ -554,6 +595,36 @@ cursor: pointer;
   .infoDisplayFirstDivBlock{
     margin-left: 0;
   }
+
+
+  #loader {
+    border: 12px solid #fffcfc;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    z-index: 1000;
+    animation: spin 1s linear infinite;
+    
+  }
+  
+  @keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  .center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+
 }
 
 
@@ -647,13 +718,15 @@ cursor: pointer;
 .ethlogoSearch{
   cursor: pointer;
   background-color: #9F496E ;
-  border-radius: 0.3em 0 0 0.3em;
+  border-radius: 0.1em 0 0 0.1em;
   font-size: 1em;
+  outline: none;
 }
 
 .ethlogoSearch > i{
 font-size: 1.1em;
  margin-left: 0.1em; 
+ outline: none;
 }
 
 

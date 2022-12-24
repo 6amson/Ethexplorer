@@ -1,5 +1,6 @@
 import '../css/index.css'
 import '../server/server'
+import { metaconnect } from '../server/server';
 
 
 
@@ -24,7 +25,8 @@ const styledLink1 = {
 
 const Landingpage = () => {
     return (
-        <div className='container'>
+        <div id='container' className='container'>
+            <div id="loader" class="center"></div>
             <div className='navDiv'>
                 <nav>
                     <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span>ETHEXPLORER</span></div>
@@ -37,7 +39,7 @@ const Landingpage = () => {
                         </ul>
                     </div>
                     <div className='navDiv_buttonDiv'>
-                        <button id='MetamaskBtn'>Connect Wallet</button>
+                        <button onClick={metaconnect} id='MetamaskBtn'>Connect Wallet</button>
                     </div>
                 </nav>
             </div>
@@ -61,6 +63,8 @@ const Landingpage = () => {
                     </div>
                 </div>
             </div>
+
+            <div className='errorMes'><p></p></div>
 
             <div className='infoDis'>
                 <div className='infoDisplayDiv'>
