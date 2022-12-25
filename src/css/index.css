@@ -23,20 +23,24 @@
 
 .errorMes{
   position: absolute;
-  left: 50%;
-  top: 57%;
+  left: 10%;
+  top: 50%;
   z-index: 100;
 }
 
 
+
+
 button{
   font-weight: 400;
-  color: whitesmoke;
-  background-color: #9F496E;
+
+  color: white;
+  background-color: rgba(31, 199, 212, 1);;
   padding: 0.8em;
   cursor: pointer;
   outline: none;
   border: none;
+  
 }
 
 .container{
@@ -45,7 +49,7 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   overflow-x: hidden;
-  background-color: black;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /*
@@ -54,15 +58,41 @@ button{
   border: solid 5px greenyellow;
 }
 */
+
+#metamasklogo{
+height: 1.5em;
+width: 1.5em;
+margin-left: 0.3em;
+}
+
+#metamasklogomobile{
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
+
+.navDiv_buttonDiv > div:first-child{
+  display: flex;
+  width: 5em;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+.navDiv_buttonDiv{
+display: flex;
+justify-content: space-between;
+}
+
 nav{
   overflow-x: hidden;
-  color: rgb(0, 0, 0);
+  color: white;
   display: flex;
   height: 5em;
   align-items: center;
   justify-content: space-around;
   width: 100vw;
-  background-color:  #F1ECE7;
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
 }
 
 
@@ -87,13 +117,14 @@ nav{
 }
 
 .fa-ethereum{
-  font-size: 1.7em;
+  font-size: 1.4em;
   margin-right: 0.5em;
+  background: rgba(31, 199, 212, 1);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-color: #FFFFFF;
-  background-image: linear-gradient( 135deg, #F1CA74 10%, #A64DB6 100%);
+ 
+  
 
 
 }
@@ -107,6 +138,11 @@ nav{
   background-clip: text;
   -webkit-text-fill-color: transparent;
   
+}
+
+.navDiv_logoDiv > span{
+  font-weight: 500;
+  font-size: 1.5em;
 }
 
 .navDiv_HomeDiv{
@@ -128,7 +164,7 @@ nav{
   left: 0.5em;
   width: 2em;
   height: 0.1em;
-  background-color: #9F496E;
+  background-color: white;
 }
 
 
@@ -136,11 +172,11 @@ nav{
 
 .bodyDiv{
   display: grid;
-  border-top: solid 0.5px #ac1255;
   overflow-x: hidden;
   width: 100%;
   margin: 0;
   height: 70%;
+ 
 }
 
 .bodyDivSub{
@@ -154,17 +190,14 @@ nav{
 }
 
 .bodyDiv_h1Text > h1{
-  
-  color: rgb(255, 255, 255);
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
   word-spacing: 0.1em;
   font-size: 3em;
   letter-spacing: 0.02em;
-  text-shadow:
-       1px 1px 3px rgb(10, 10, 10),
-     -1px -1px 0 rgb(0, 0, 0),  
-      1px -1px 0 rgb(39, 61, 169),
-      -1px 1px 0 rgb(183, 57, 193),
-       1px 1px 0 #000;
 }
 /*
 .bodyDiv_h1Text > h1 > span{
@@ -179,8 +212,8 @@ nav{
 
 
 .bodyDiv_paraText > h3{
-  font-weight: 300;
-  color: white;
+  font-weight: 500;
+  color: black;
 }
 
 
@@ -199,12 +232,12 @@ nav{
   padding: 0 1em 0 2.2em;
   border-radius: 0 0.3em 0.3em 0;
   display: flex;
-  border: solid black 2px;
+  border: sx;
 }
 
 
 .bodyDiv_input > input:focus {
-border: 3px solid #9F496E;
+border: 3px solid purple;
 }
 
 .fa-magnifying-glass{
@@ -220,14 +253,18 @@ border: 3px solid #9F496E;
 
 .ethlogoSearch{
   cursor: pointer;
-  background-color: #9F496E ;
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
   border-radius: 0.3em 0 0 0.3em;
   font-size: 1.1em;
+  color: white;
+  font-size: 500;
+  
 }
 
 .ethlogoSearch > i{
 font-size: 1.1em;
  margin-left: 0.5em; 
+ 
 }
 
 
@@ -236,14 +273,14 @@ font-size: 1.1em;
   display: flex;
   justify-content: space-between;
   width: inherit;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
-  color: white;
+  color: black;
 }
 
 .bodyDiv_inputText > div > i{
   margin-right: 0.5em;
-  color: #9F496E;
+  color: rgba(31, 199, 212, 1);
 }
 
 
@@ -252,7 +289,7 @@ font-size: 1.1em;
 /*  INFO DISPLAY  */
 
 .infoDisplayDiv{
-  background-color: whitesmoke;
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -264,12 +301,13 @@ font-size: 1.1em;
   margin: auto;
   padding: 1em;
   border-radius: 0.2em;
+  color: white;
 }
 
 .infoDisplayFirstDiv{
 
 width: fit-content;
- margin: auto;
+ margin: auto 0.5em;
  padding: 1em;
 }
 
@@ -288,7 +326,7 @@ display: flex;
   margin-left: -1.2em;
   font-size: 1.5em;
   margin-top: 0.5em;
-  color: #9F496E;
+  color: rgba(31, 199, 212, 1);
 }
 
 .infoDisplayFirstDivBlock{
@@ -314,6 +352,7 @@ display: flex;
 .infoDisplayValueDiv2 > i{
   margin-left: 0.5em;
   color: red;
+  display: none;
 }
 
 .vl {
@@ -367,12 +406,12 @@ display: flex;
 /*   FOOTER    */
 
 .footer{
-  background-color: #e1e3e6;
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 1.2em;
-  color: rgb(0, 0, 0);
+  color: white;
   padding: 2em;
   font-size: 1.2em;
 }
@@ -387,7 +426,7 @@ display: flex;
 
 
 .footerEth{
-  color: #000;
+  color: rgb(255, 255, 255);
  
 }
 
@@ -441,6 +480,8 @@ display: flex;
 
 
 
+
+
 /*         LASTSECTION          */
 
 
@@ -453,6 +494,11 @@ display: flex;
 
 .lastSection2 > p > i{
 cursor: pointer;
+background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
 }
 
 .lastSection1{
@@ -470,6 +516,9 @@ cursor: pointer;
   font-size: 1.2em;
   color: #9F496E;
 }
+
+
+
 
 /*   LOADER   */
 
@@ -503,11 +552,67 @@ cursor: pointer;
 
 
 
+/*          RESULT BODY STYLES         */
+.body{
+  height: 100vh;
+  border: solid 2px greenyellow;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.5fr 2fr;
+  padding: 2em;
+  row-gap: 2em;
+  color: white;
+  
+}
+
+.body1{
+  min-width: 22em;
+  border: solid 2px rgb(221, 255, 0);
+  display: grid;
+ 
+}
+
+.body1 > div{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.body1 > div:first-child{
+  font-size: 0.9em;
+}
+
+.body1 > div > i{
+  color: #9F496E;
+  margin-right: 0.4em;
+}
+
+.body2{
+  border: solid 2px blue;
+}
+
+
+
 
 /*  +++++ MEDIA QUERIES +++++  */
 
 
 @media screen and (max-width: 892px){
+  .navDiv_buttonDiv > div:first-child{
+    display: flex;
+    width: 5em;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navDiv_buttonDiv > div:first-child > img, i{
+    cursor: pointer;
+  }
+
+ #MetamaskBtn{
+   display: none;
+ }
+
+
   .navDiv_optionsDiv > ul{
     display: none;
   }
@@ -571,6 +676,7 @@ cursor: pointer;
   }
 
   .infoDisplayFirstDiv{
+    margin-left: 0;
     font-weight: 400;
     margin-bottom: 0.3em;
     border-bottom: 1px solid silver;
@@ -585,7 +691,13 @@ cursor: pointer;
   
   .bodyDiv_inputText > div > i{
     margin-right: 0.5em;
-    color: #9F496E;
+
+  }
+
+  .infoDisplayDiv > div:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 
   .infoDisplayFirstDivMGP{
@@ -668,15 +780,7 @@ cursor: pointer;
     grid-template-rows: auto;
     grid-template-columns: 0.3fr 0.66fr;
   }
-  /*
-  .bodyDiv_input{
-    border: solid 2px red;
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 0.4fr 0.6fr;
-
-  }*/
+ 
   
   .bodyDiv_input > input{
     font-size: 1em;
@@ -717,7 +821,7 @@ cursor: pointer;
 
 .ethlogoSearch{
   cursor: pointer;
-  background-color: #9F496E ;
+  
   border-radius: 0.1em 0 0 0.1em;
   font-size: 1em;
   outline: none;
@@ -782,7 +886,7 @@ justify-content: center;
   width: 10em;
   justify-content: space-evenly;
   font-size: 1.2em;
-  color: #9F496E;
+
   margin-left: 1.4em;
 }
 }
