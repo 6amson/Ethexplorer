@@ -199,7 +199,7 @@ background-clip: text;
 text-fill-color: transparent;
   word-spacing: 0.1em;
   font-size: 3em;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.001em;
 }
 /*
 .bodyDiv_h1Text > h1 > span{
@@ -644,7 +644,7 @@ background-color: transparent;
 
   .bodyDiv_paraText > h3{
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: 1.7em;
     position: relative;
     left: -0.1em;
     
@@ -681,7 +681,7 @@ background-color: transparent;
    border-radius: 0.3em;
     width: max-content;
     margin: auto;
-    padding: 0;
+    padding: 1em;
   }
 
   .vl, .vl2, .vh, .vh2, .vh3{
@@ -693,7 +693,6 @@ background-color: transparent;
     font-weight: 400;
     margin-bottom: 0.3em;
     width: 21em;
-    
     border-bottom: 1px solid silver;
   }
 
@@ -706,6 +705,7 @@ background-color: transparent;
   
   .bodyDiv_inputText > div > i{
     margin-right: 0.5em;
+    
 
   }
 
@@ -775,6 +775,11 @@ background-color: transparent;
   
   }
 
+  .bodyDiv_h1Text{
+    margin: auto;
+    margin-bottom: 1.5em;
+  }
+
   .bodyDiv_paraText > h3{
     font-weight: 300;
     font-size: 1.2em;
@@ -814,6 +819,7 @@ background-color: transparent;
 
    .fa-ethereumlogo{
      font-size: 1.2em;
+
    }
    
  
@@ -844,8 +850,9 @@ background-color: transparent;
 
 .ethlogoSearch > i{
 font-size: 1.1em;
- margin-left: 0.1em; 
+ margin-left: 0.4em; 
  outline: none;
+ 
 }
 
 
@@ -860,7 +867,7 @@ font-size: 1.1em;
     gap: 1em;
     width: max-content;
     margin: auto;
-    padding: 1em;
+    padding: 1em 1em 1em 1.5em;
   }
 
   .footer{
