@@ -35,7 +35,7 @@ button{
   font-weight: 400;
 
   color: white;
-  background-color: rgba(31, 199, 212, 1);;
+  background-color: rgba(31, 199, 212, 1);
   padding: 0.8em;
   cursor: pointer;
   outline: none;
@@ -49,7 +49,9 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   overflow-x: hidden;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(45deg, rgba(50, 29, 169, 0.32) 50%, rgba(37, 165, 151, 0) 50%);
+  
+  
 }
 
 /*
@@ -335,6 +337,7 @@ display: flex;
 
 .infoDisplayFirstDivMGP{
   margin-left: 2em;
+  
 }
 
 .infoDisplayValueDiv1{
@@ -346,12 +349,14 @@ display: flex;
   font-weight: 400;
   color: red;
   margin-left: 2em;
-  
+  border-radius: 0.2em;
+  background-color: rgb(255, 255, 255);
+  padding: 0.15em 0.3em;
 }
 
 .infoDisplayValueDiv2 > i{
   margin-left: 0.5em;
-  color: red;
+  
   display: none;
 }
 
@@ -608,11 +613,19 @@ text-fill-color: transparent;
     cursor: pointer;
   }
 
- #MetamaskBtn{
+  .navDiv_buttonDiv > div:first-child >button{
+background-color: transparent;
+  }
+
+ .MetamaskBtn{
    display: none;
  }
 
-
+ #metamasklogomobile{
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
   .navDiv_optionsDiv > ul{
     display: none;
   }
@@ -658,7 +671,6 @@ text-fill-color: transparent;
   
 
   .infoDisplayDiv{
-    background-color: whitesmoke;
     position: relative;
     display: grid;
     grid-template-columns:1fr;
@@ -666,9 +678,10 @@ text-fill-color: transparent;
     position: relative;
     top: -5em;
     gap: 2em;
+   border-radius: 0.3em;
     width: max-content;
     margin: auto;
-    padding: 8em;
+    padding: 0;
   }
 
   .vl, .vl2, .vh, .vh2, .vh3{
@@ -679,6 +692,8 @@ text-fill-color: transparent;
     margin-left: 0;
     font-weight: 400;
     margin-bottom: 0.3em;
+    width: 21em;
+    
     border-bottom: 1px solid silver;
   }
 
@@ -822,7 +837,7 @@ text-fill-color: transparent;
 .ethlogoSearch{
   cursor: pointer;
   
-  border-radius: 0.1em 0 0 0.1em;
+  border-radius: 0.3em 0 0 0.3em;
   font-size: 1em;
   outline: none;
 }
@@ -836,17 +851,16 @@ font-size: 1.1em;
 
   .infoDisplayDiv{
     box-shadow: -0.2em 0 .4em grey;
-    background-color: whitesmoke;
     position: relative;
     display: grid;
     grid-template-columns:1fr;
     grid-template-rows: repeat(6, 1fr);
     position: relative;
     top: -10em;
-    gap: 2em;
+    gap: 1em;
     width: max-content;
     margin: auto;
-    padding: 4em;
+    padding: 1em;
   }
 
   .footer{

@@ -1,5 +1,5 @@
 import metamasklogo from '../css/MetamaskIcon.png'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../css/index.css'
 //import '../server/server'
 import { INFURA } from "../server/keys";
@@ -14,29 +14,28 @@ let infura = INFURA;
 
 
 const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${infura}`)
-const loader = document.getElementById('loader');
-//const connectBtn = document.getElementById('connectBtn')
-//const metamaskBtn = document.getElementById('MetamaskBtn')
-const input = document.getElementById('input');
-const container = document.getElementById('container');
+let accounts;
 
 
 const Landingpage = () => {
-
+    
     const [message, setMessage] = useState('');
     const [account, setAccount] = useState('');
     const [balance, setBalance] = useState('');
+    
 
     const handlechange = (e) => {
         setMessage(e.target.value);
     }
 
-
+    useEffect(() => {
+        metaconnect();    
+    }, [account])
 
     const manualconnect = async () => {
         let balances;
         console.log(`${input.value}`.trim());
-
+    
         balances = await provider.getBalance(`${input.value}`.trim());
         balances = ethers.utils.formatEther(balances);
         setBalance(balances);
@@ -44,27 +43,27 @@ const Landingpage = () => {
         console.log(ethers.utils.formatUnits(gasprice, "gwei"));
         console.log(balance);
     };
-
-
-
+    
+    
+    
     const metaconnect = async () => {
-        let accounts;
+        
         if (window.ethereum) {
-
+    
             console.log('metamask present');
             accounts = await window.ethereum.request({
                 method: 'eth_requestAccounts'
             }).catch((err) => {
-
+    
                 //error handling
                 if (err.code == '-32002') {
-                    const button = document.querySelectorAll('#button');
-
+                    
+    
                     //disable buttons
                     button.disabled = true;
                     container.style.opacity = '0.4';
                     loader.style.opacity = '1';
-
+    
                     alert('Your connection is pending. Please open metamask to continue.')
                     console.log('worse than we imagined')
                 }
@@ -73,6 +72,9 @@ const Landingpage = () => {
                     container.style.opacity = '';
                     loader.style.opacity = '0';
 
+                    
+                
+    
                 }
                 //console.log(err.code)
             })
@@ -81,15 +83,15 @@ const Landingpage = () => {
                 setAccount(accounts[0]);
                 return (account);
                 
-
+    
             } else {
                 return
             } 
-
+    
             //balance = await provider.getBalance(accounts[0]);
             //balance = ethers.utils.formatEther(balance);
-
-
+    
+    
             //const block = await provider.getBlockNumber();
             //console.log(balance);
             //const count = provider.getTransactionCount(accounts[0]).then((data) => {
@@ -103,17 +105,12 @@ const Landingpage = () => {
         }
         else {
             alert('You do not have Metamask.');
-
+    
         }
-
+    
         return (account);
-
+    
     }
-
-
-
-
-
 
     return (
         <div id='container' className='container'>
@@ -130,11 +127,11 @@ const Landingpage = () => {
                         </ul>
                     </div>
                     <div className='navDiv_buttonDiv'>
-                        <div>
-                    <img src={metamasklogo} id='metamasklogomobile' alt='metemask logo'/>
+                    <div>
+                    <button onClick={metaconnect}><img src={metamasklogo} id='metamasklogomobile' alt='metamask logo'/></button>
                     <i class="fa-solid fa-bars"></i>
                     </div>
-                    <button onClick={metaconnect} id='MetamaskBtn'>Connect Wallet <img src={metamasklogo} id='metamasklogo' alt='metemask logo'/></button>
+                    <button onClick={metaconnect} className='MetamaskBtn' id='MetamaskBtn'>Connect Wallet <img src={metamasklogo} id='metamasklogo' alt='metemask logo'/></button>
                     </div>
                 </nav>
             </div>
@@ -307,6 +304,13 @@ const Landingpage = () => {
 
     );
 }
+
+const loader = document.getElementById('loader');
+//const connectBtn = document.getElementById('connectBtn')
+//const metamaskBtn = document.getElementById('MetamaskBtn')
+const input = document.getElementById('input');
+const container = document.getElementById('container');
+const button = document.querySelectorAll('#button');
 
 
 export default Landingpage;
