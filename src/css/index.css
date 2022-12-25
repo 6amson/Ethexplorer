@@ -711,12 +711,13 @@ background-color: transparent;
 
   .infoDisplayDiv > div:last-child{
     margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: 0;
+    border-bottom: 0px solid;
+    padding-top: 0;
+    margin-top: 0.5em;
   }
 
   .infoDisplayFirstDivMGP{
-    margin-left: 0;
+    margin-bottom: 0;
   }
 
   .infoDisplayFirstDivBlock{
@@ -867,7 +868,7 @@ font-size: 1.1em;
     gap: 1em;
     width: max-content;
     margin: auto;
-    padding: 1em 1em 1em 1.5em;
+    padding: 1em 1em 0em 1.5em;
   }
 
   .footer{
