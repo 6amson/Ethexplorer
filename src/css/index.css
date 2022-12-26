@@ -3,10 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500&display=swap');
 
 /*  
- #2C272F dark brown
- #9F496E burgundy
- #F1ECE7 cream light
- #647393 blue-ash
+rgba(31, 199, 212, 1); blue
+ background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
 */
 
 *{
@@ -33,7 +31,7 @@
 
 button{
   font-weight: 400;
-
+  border-radius: 0.3em;
   color: white;
   background-color: rgba(31, 199, 212, 1);
   padding: 0.8em;
@@ -49,7 +47,7 @@ button{
   grid-template-rows: 0.5fr, 2fr, 2fr;
   display: inline-block;
   overflow-x: hidden;
-  background: linear-gradient(45deg, rgba(50, 29, 169, 0.32) 50%, rgba(37, 165, 151, 0) 50%);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.32) 50%, rgba(37, 165, 151, 0) 50%);
   
   
 }
@@ -225,16 +223,16 @@ text-fill-color: transparent;
   margin-bottom: 1em;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 0.3fr 0.7fr;
+  grid-template-columns: 0.8fr 0.2fr;
 }
 
 .bodyDiv_input > input{
   font-size: 1.5em;
   height: 2.9em;
   padding: 0 1em 0 2.2em;
-  border-radius: 0 0.3em 0.3em 0;
+  border-radius: 0.3em 0em 0em 0.3em;
   display: flex;
-  border: sx;
+  
 }
 
 
@@ -243,9 +241,7 @@ border: 3px solid purple;
 }
 
 .fa-magnifying-glass{
-  position: absolute;
-  left: 12em;
-  top: 1.2em;
+ 
   font-size: 1.3em;
 }
 
@@ -256,7 +252,7 @@ border: 3px solid purple;
 .ethlogoSearch{
   cursor: pointer;
   background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
-  border-radius: 0.3em 0 0 0.3em;
+  border-radius: 0em 0.3em 0.3em 0;
   font-size: 1.1em;
   color: white;
   font-size: 500;
@@ -265,8 +261,8 @@ border: 3px solid purple;
 
 .ethlogoSearch > i{
 font-size: 1.1em;
- margin-left: 0.5em; 
- 
+ margin-left: 0.5em;
+ color: rgba(31, 199, 212, 1);
 }
 
 
@@ -282,7 +278,10 @@ font-size: 1.1em;
 
 .bodyDiv_inputText > div > i{
   margin-right: 0.5em;
-  color: rgba(31, 199, 212, 1);
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -305,6 +304,39 @@ font-size: 1.1em;
   border-radius: 0.2em;
   color: white;
 }
+
+/*
+.scale-in-hor-center {
+  -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes scale-in-hor-center {
+0% {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  opacity: 1;
+}
+100% {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+}
+}
+@keyframes scale-in-hor-center {
+0% {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  opacity: 1;
+}
+100% {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+}
+}*/
+
 
 .infoDisplayFirstDiv{
 
@@ -615,6 +647,13 @@ text-fill-color: transparent;
 
   .navDiv_buttonDiv > div:first-child >button{
 background-color: transparent;
+background-color: rgba(31, 199, 212, 1);
+
+border-radius: 0.3em;
+width: 3em;
+height: 3em;
+
+
   }
 
  .MetamaskBtn{
@@ -625,13 +664,16 @@ background-color: transparent;
   height: 1.5em;
   width: 1.5em;
   cursor: pointer;
+  position: relative;
+
+
 }
   .navDiv_optionsDiv > ul{
     display: none;
   }
 
   .fa-magnifying-glass{
-    display: none;
+    
   }
 
   .navDiv_HomeDiv > span{
@@ -661,7 +703,7 @@ background-color: transparent;
   }
 
   .fa-magnifying-glass{
-   display: none;
+   
   }
  
   /*
@@ -682,7 +724,11 @@ background-color: transparent;
     width: max-content;
     margin: auto;
     padding: 1em;
+   
   }
+
+
+
 
   .vl, .vl2, .vh, .vh2, .vh3{
     display: none;
@@ -799,7 +845,7 @@ background-color: transparent;
     margin-bottom: 1em;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 0.3fr 0.66fr;
+    grid-template-columns: 0.66fr 0.33fr;
   }
  
   
@@ -815,7 +861,7 @@ background-color: transparent;
   
 
   .fa-magnifying-glass{
-    display: none;
+  
    }
 
    .fa-ethereumlogo{
@@ -832,9 +878,9 @@ background-color: transparent;
     font-weight: 400;
   }
   
-  div > i{
+  .fa-bars{
     margin-right: 0.5em;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
   }
 
   .bodyDiv_inputText > div{
@@ -843,9 +889,6 @@ background-color: transparent;
 
 .ethlogoSearch{
   cursor: pointer;
-  
-  border-radius: 0.3em 0 0 0.3em;
-  font-size: 1em;
   outline: none;
 }
 
