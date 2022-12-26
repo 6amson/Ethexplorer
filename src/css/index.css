@@ -842,7 +842,7 @@ height: 3em;
     margin-bottom: 1em;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 0.66fr 0.33fr;
+    grid-template-columns: 0.66fr 0.3fr;
   }
  
   
