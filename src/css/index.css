@@ -672,9 +672,6 @@ height: 3em;
     display: none;
   }
 
-  .fa-magnifying-glass{
-    
-  }
 
   .navDiv_HomeDiv > span{
     display: none;
@@ -702,9 +699,9 @@ height: 3em;
     font-size: 0.7em;
   }
 
-  .fa-magnifying-glass{
-   
-  }
+ .ethlogoSearch{
+   height: fit-content;
+ }
  
   /*
   .ethlogoSearch{
