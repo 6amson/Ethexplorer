@@ -38,8 +38,6 @@ button{
   cursor: pointer;
   outline: none;
   border: none;
-
-  
 }
 
 .container{
@@ -233,12 +231,12 @@ text-fill-color: transparent;
   padding: 0 1em 0 2.2em;
   border-radius: 0.3em 0em 0em 0.3em;
   display: flex;
-  
+  border: solid 1px silver;
 }
 
 
 .bodyDiv_input > input:focus {
-border: 3px solid purple;
+border: 1px solid purple;
 }
 
 .fa-magnifying-glass{
@@ -275,6 +273,7 @@ font-size: 1.1em;
   font-weight: 500;
   cursor: pointer;
   color: black;
+  
 }
 
 .bodyDiv_inputText > div > i{
@@ -681,15 +680,14 @@ height: 3em;
 
   .bodyDiv_paraText > h3{
     font-weight: 300;
-    font-size: 1.7em;
+    font-size: 1.3em;
     position: relative;
-    left: -0.1em;
+    left: -1em;
     
   }
 
   .bodyDiv_input{
     position: relative;
-    border: red solid 2px;
   }
   
 
@@ -741,7 +739,6 @@ height: 3em;
   .bodyDiv_inputText{
     display: flex;
     justify-content: space-around;
-    width: inherit;
     font-weight: 400;
   }
   
@@ -857,6 +854,8 @@ height: 3em;
 
   .bodyDiv_h1Text{
     margin: auto;
+    position: relative;
+    left: -2.5em;
     margin-bottom: 1.5em;
   }
 
@@ -864,7 +863,7 @@ height: 3em;
     font-weight: 300;
     font-size: 1.2em;
     position: relative;
-    left: 2.5em;
+    left: 1em;
     width: 16em;
     
   }
