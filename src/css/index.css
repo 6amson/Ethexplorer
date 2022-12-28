@@ -872,7 +872,7 @@ height: 3em;
     font-weight: 300;
     font-size: 1.2em;
     position: relative;
-    left: 1em;
+    left: 0.5em;
     width: 19em;
     margin: auto;
    
@@ -918,7 +918,7 @@ height: 3em;
     justify-content: space-between;
     width: inherit;
     font-weight: 400;
-    width: 22em;
+    
   }
   
   .fa-bars{
