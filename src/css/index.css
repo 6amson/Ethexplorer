@@ -860,7 +860,7 @@ height: 3em;
   .bodyDiv_h1Text{
     margin: auto;
     position: relative;
-    left: -2.5em;
+    left: -1.5em;
     
     
     width: fit-content;
@@ -872,7 +872,7 @@ height: 3em;
     font-weight: 300;
     font-size: 1.2em;
     position: relative;
-    left: em;
+    left: 1em;
     width: 19em;
     margin: auto;
    
@@ -889,7 +889,8 @@ height: 3em;
     margin-bottom: 1em;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 0.66fr 0.3fr;
+    grid-template-columns: 0.6fr 0.4fr;
+    border: solid red 2px;
   }
  
   
