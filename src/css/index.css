@@ -970,9 +970,8 @@ justify-content: space-between;
   display: flex;
   width: 8em;
   justify-content: space-evenly;
-  font-size: 1.2em;
-
-  margin-left: 1.4em;
+  font-size: 1em;
+  margin-left: 0.5em;
 }
 }
 
