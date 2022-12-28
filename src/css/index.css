@@ -861,6 +861,10 @@ height: 3em;
     margin: auto;
     position: relative;
     left: -2.5em;
+    
+    
+    width: fit-content;
+    margin: auto;
     margin-bottom: 1.5em;
   }
 
@@ -868,8 +872,11 @@ height: 3em;
     font-weight: 300;
     font-size: 1.2em;
     position: relative;
-    left: 2.5em;
-    width: 16em;
+    left: em;
+    width: 19em;
+    margin: auto;
+   
+
     
   }
   .bodyDiv{
@@ -890,7 +897,7 @@ height: 3em;
     font-size: 1em;
     padding: 0 0.5em 0 0.4em;
     height: 3.1em;
-    width: 22em;
+    width: 17em;
   }
   
   .bodyDiv_input > input::placeholder{
@@ -907,10 +914,10 @@ height: 3em;
 
   .bodyDiv_inputText{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: inherit;
     font-weight: 400;
-    width: 22em;
+    width: 21em;
   }
   
   .fa-bars{
