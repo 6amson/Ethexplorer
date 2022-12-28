@@ -1,21 +1,18 @@
 import '../css/index.css';
 import './Landingpage'
 import metamasklogo from '../css/MetamaskIcon.png'
-//import { manualconnect } from '../server/server';
-//import { metaconnect } from '../server/server';
+
 
 
 const Land = (props) => {
-    //const metaconnect = props.metaconnect;
-    //const manualconnect = props.manualconnect;
     const handlechange = props.handlechange
     const message = props.message;
     const balance = props.balance;
     const metaconnect = props.metaconnect;
     const manualconnect = props.manualconnect;
-    
-    return(
-        
+
+    return (
+
         <div id='container' className='container'>
             <div id="loader" class="center"></div>
             <div className='navDiv'>
@@ -30,11 +27,11 @@ const Land = (props) => {
                         </ul>
                     </div>
                     <div className='navDiv_buttonDiv'>
-                    <div>
-                    <button onClick={metaconnect}><img src={metamasklogo} id='metamasklogomobile' alt='metamask logo'/></button>
-                    <i class="fa-solid fa-bars"></i>
-                    </div>
-                    <button onClick={metaconnect} className='MetamaskBtn' id='MetamaskBtn'>Connect Wallet <img src={metamasklogo} id='metamasklogo' alt='metemask logo'/></button>
+                        <div>
+                            <button onClick={metaconnect}><img src={metamasklogo} id='metamasklogomobile' alt='metamask logo' /></button>
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <button onClick={metaconnect} className='MetamaskBtn' id='MetamaskBtn'>Connect Wallet <img src={metamasklogo} id='metamasklogo' alt='metemask logo' /></button>
                     </div>
                 </nav>
             </div>
@@ -44,7 +41,7 @@ const Land = (props) => {
                 <div className='bodyDivSub'>
                     <div className='bodyDiv_h1Text'><h1>Ethereum <span>Blockchain</span> Explorer</h1></div>
                     <div className='bodyDiv_paraText'><h3>Get access to all transactions that occur on the ethereum blockchain.</h3></div>
-                    <div className='bodyDiv_input' >                        
+                    <div className='bodyDiv_input' >
                         <input
                             onChange={handlechange}
                             value={message}
@@ -87,7 +84,7 @@ const Land = (props) => {
                             <div className='infoDisplayValueDiv1'>
                                 <span>$ 1, 182.32</span>
                             </div>
-                            
+
                             <div className='vh2'></div>
                             <div className='vl2'></div>
                         </div>
@@ -99,7 +96,7 @@ const Land = (props) => {
                             <div className='infoDisplayValueDiv1'>
                                 <span>$ 1, 182.32</span>
                             </div>
-                            
+
                             <div className='vh3'></div>
                         </div>
                     </div>
@@ -110,7 +107,7 @@ const Land = (props) => {
                             <div className='infoDisplayValueDiv1'>
                                 <span>$ 1, 182.32</span>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -121,7 +118,7 @@ const Land = (props) => {
                             <div className='infoDisplayValueDiv1'>
                                 <span>$ 1, 182.32</span>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -141,6 +138,7 @@ const Land = (props) => {
             </div>
             <section>
                 <div className='footer'>
+
                     <div className='footer1'>
                         <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span className='footerEth'>ETHEXPLORER</span></div>
                         <div><p><strong>ETHExplorer</strong> is a Blockchain platform for Ethereum.</p></div>
@@ -148,9 +146,9 @@ const Land = (props) => {
                     </div>
 
                     <div className='footer2'>
-                        <div><span><strong>Blockchain</strong></span></div>
+                        <div className='footer2Div'><span><strong>Blockchain</strong></span><i class="fa-solid fa-plus"></i></div>
                         <div>
-                            <ul>
+                            <ul className='footer2Ul'>
                                 <li>Transactions</li>
                                 <li>Blocks</li>
                             </ul>
@@ -158,9 +156,9 @@ const Land = (props) => {
                     </div>
 
                     <div className='footer3'>
-                        <div><span><strong>About</strong></span></div>
+                        <div className='footer3Div'><span><strong>About</strong></span><i class="fa-solid fa-plus"></i></div>
                         <div>
-                            <ul>
+                            <ul className='footer3Ul'>
                                 <li>About Ethexplorer</li>
                                 <li>Terms of service</li>
                                 <li>Privacy Policy</li>
@@ -170,9 +168,9 @@ const Land = (props) => {
                     </div>
 
                     <div className='footer4'>
-                        <div><span><strong>Languages</strong></span></div>
+                        <div className='footer4Div'><span><strong>Languages</strong></span><i class="fa-solid fa-plus"></i></div>
                         <div>
-                            <ul>
+                            <ul className='footer4Ul'>
                                 <li>English</li>
                                 <li>Arabic</li>
                                 <li>French</li>
@@ -201,7 +199,7 @@ const Land = (props) => {
         </div>
 
 
-    
+
     )
 }
 

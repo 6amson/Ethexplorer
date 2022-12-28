@@ -1,11 +1,13 @@
+import { useHistory } from "react-router-dom";
 import Land from './Land'
-import metamasklogo from '../css/MetamaskIcon.png'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../css/index.css'
-//import '../server/server'
 import { INFURA } from "../server/keys";
 import "../components/Landingpage";
+import Resultpage from './Resultpage';
+import { render } from '@testing-library/react';
 const { ethers } = require("ethers");
+
 
 
 //import { metaconnect, manualconnect, accounts} from '../server/server';
@@ -14,9 +16,9 @@ const { ethers } = require("ethers");
 
 let infura = INFURA;
 
-
 const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${infura}`)
 let accounts;
+
 
 
 const Landingpage = () => {
@@ -32,25 +34,28 @@ const Landingpage = () => {
     const container = document.getElementById('container');
     const button = document.querySelectorAll('#button');
 
+    const history = useHistory();
 
     const handlechange = (e) => {
         setMessage(e.target.value);
-        //return message;
-        console.log(message);
     }
 
 
+    //console.log(balance);
+
     const manualconnect = async () => {
         let balances;
-        console.log(`${input.value}`.trim());
+        //console.log(`${input.value}`.trim());
 
-        balances = await provider.getBalance(`${input.value}`.trim());
+        balances = await provider.getBalance(message.trim());
         balances = ethers.utils.formatEther(balances);
         setBalance(balances);
-        const gasprice = await provider.getGasPrice(`${input.value}`.trim());
+        const gasprice = await provider.getGasPrice(message.trim());
         console.log(ethers.utils.formatUnits(gasprice, "gwei"));
-        console.log(balance);
+
     };
+  
+    //console.log(account);
 
 
 
@@ -79,23 +84,26 @@ const Landingpage = () => {
                     alert('You rejected the request to connect Metamask.');
                     container.style.opacity = '1';
                     loader.style.opacity = '0';
-
-
-
-
+                }
+                else{
+                    alert('Thre is an error connecting with your metamask');
                 }
                 //console.log(err.code)
             })
+        
             if (accounts[0] !== 'null') {
-                window.location.href = '/result'
+                //window.location.href = '/result'
+                //return (account);
+                console.log('metamask connected');
                 setAccount(accounts[0]);
-                return (account);
-
-
-            } else {
-                return
+                
+                console.log(account);
+                //console.log(accounts[0]);
+                history.push({
+                    pathname: "/result",
+                    state: { detail: accounts[0]}
+                })
             }
-
             //balance = await provider.getBalance(accounts[0]);
             //balance = ethers.utils.formatEther(balance);
 
@@ -122,7 +130,7 @@ const Landingpage = () => {
 
     return (
         <div>
-            <Land message={message} balance={balance} manualconnect={manualconnect} handlechange={handlechange} metaconnect={metaconnect}/>
+            <Land message={message} balance={balance} manualconnect={manualconnect} handlechange={handlechange} metaconnect={metaconnect} />
         </div>
     );
 }

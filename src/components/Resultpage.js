@@ -1,14 +1,24 @@
 import '../components/Landingpage'
 import '../css/index.css'
-import { useEffect } from 'react';
+import metamasklogo from '../css/MetamaskIcon.png'
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
+//import { useEffect } from 'react';
+//import { INFURA } from "../server/keys";
+//import "../components/Landingpage";
+//const { ethers } = require("ethers");
 
-let metaconnect;
-let account;
-let balance;
 
 
-const Resultpage = () => {
-    
+
+const Resultpage = (props) => {
+    const location = useLocation();
+
+    const metaconnect = props.metaconnect;
+    const account = location.state.detail;
+    const balance = props.balance
+
+    console.log(account);
+
     return (
 
         
@@ -18,7 +28,7 @@ const Resultpage = () => {
                 <div id="loader" class="center"></div>
                 <nav>
                     <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span>ETHEXPLORER</span></div>
-                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Results</span><div className='homeBorderBottom'></div></div>
+                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Home</span><div className='homeBorderBottom'></div></div>
                     <div className='navDiv_optionsDiv'>
                         <ul>
                             <li>Blockchain <i class="fa-solid fa-angle-down"></i></li>
@@ -27,7 +37,11 @@ const Resultpage = () => {
                         </ul>
                     </div>
                     <div className='navDiv_buttonDiv'>
-                        <button onClick={metaconnect} id='MetamaskBtn'>Connect Wallet</button>
+                        <div>
+                            <button onClick={metaconnect}><img src={metamasklogo} id='metamasklogomobile' alt='metamask logo' /></button>
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <button onClick={metaconnect} className='MetamaskBtn' id='MetamaskBtn'>Connect Wallet <img src={metamasklogo} id='metamasklogo' alt='metemask logo' /></button>
                     </div>
                 </nav>
             </div>
