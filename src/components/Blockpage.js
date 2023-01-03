@@ -41,6 +41,8 @@ const Blockpage = () => {
 
     const denom = 1000000000000000000;
 
+    const finalBlock = Number(block.trim()).toString(16);
+
     const truncate = (string, limit) => {
         if (string.length <= limit) {
             return string;
@@ -57,11 +59,11 @@ const Blockpage = () => {
     async function getTxList() {
 
         async function determineBlock() {
-
-            await fetch(endpoint + `?module=proxy&action=eth_getBlockByNumber&tag=${block}&boolean=true&apikey=${etherscanId}`)
+            console.log(block);
+            await fetch(endpoint + `?module=proxy&action=eth_getBlockByNumber&tag=${finalBlock}&boolean=true&apikey=${etherscanId}`)
                 .then((res) => res.json())
                 .then((data) => {
-                      
+                    console.log(data)
                     console.log(data.result.transactions.length)
                     setTransactionslength(data.result.transactions.length);
                     setClientTimeStamp(timeAgo.format(parseInt(data.result.timestamp) * 1000));
@@ -69,26 +71,26 @@ const Blockpage = () => {
                     setNonce(data.result.nonce);
                     setdifficulty(parseInt(data.result.totalDifficulty));
                     setGasUsed(parseInt(data.result.gasUsed));
-                    
+
                     
 
                 })
                 .catch((err) => {
                     console.log(err)
                 })
-        }
+        };
 
         determineBlock();
 
-        async function getBlockReward (){
+        async function getBlockReward() {
             await fetch(endpoint + `?module=block&action=getblockreward&blockno=${block}&apikey=${etherscanId}`)
                 .then((res) => res.json())
                 .then((data) => {
-                      
+
                     console.log(data);
                     setMiner(data.result.blockMiner);
-                    setReward(data.result.blockReward/denom)
-                    
+                    setReward(data.result.blockReward / denom)
+
                 })
                 .catch((err) => {
                     console.log(err)
@@ -99,16 +101,16 @@ const Blockpage = () => {
 
 
 
-        async function getEtherPrice(){
-            await fetch(endpoint + `?module=block&action=getblockreward&blockno=${block}&apikey=${etherscanId}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data.result.ethusd);
-                setMainEtherPrice(data.result.ethusd);
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        async function getEtherPrice() {
+            await fetch(endpoint + `?module=stats&action=ethprice&apikey=${etherscanId}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data.result.ethusd);
+                    setMainEtherPrice(data.result.ethusd);
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         };
 
         //getEtherPrice()
@@ -117,14 +119,14 @@ const Blockpage = () => {
 
 
 
-        
+
 
     //const dividedBalance = expo(balance / denom, 3) + ' Ether';
     //const midBalance = (balance/denom) * mainEtherPrice; 
-   //const finalBalance = dividedBalance * mainEtherPrice;
+    //const finalBalance = dividedBalance * mainEtherPrice;
 
 
-   
+
 
 
 

@@ -26,8 +26,7 @@ const timeAgo = new TimeAgo('en-US')
 
 const Resultpage = () => {
     const location = useLocation();
-    //const account = location.state.accountPri;
-    const account = '0xB9EC6069F13F88476229f2Df442Dcd997b736B32';
+    const account = location.state.accountPri;
 
     const [balance, setBalance] = useState('');
     const [mainEtherPrice, setMainEtherPrice] = useState('');
