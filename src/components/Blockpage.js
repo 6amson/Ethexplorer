@@ -88,7 +88,7 @@ const Blockpage = () => {
                 .then((data) => {
 
                     console.log(data);
-                    setMiner(data.result.blockMiner);
+                    setMiner(truncate(data.result.blockMiner, 34));
                     setReward(data.result.blockReward / denom)
 
                 })
