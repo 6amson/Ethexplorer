@@ -1,4 +1,3 @@
-
 import '../css/index.css';
 import './Resultpage'
 import metamasklogo from '../css/MetamaskIcon.png'
@@ -7,11 +6,17 @@ import { Link } from 'react-router-dom';
 
 
 
-const Result = (props) => {
+const Block = (props) => {
     const confirmMeta = props.confirmMeta
-    const account = props.account;
-    const balance = props.balance;
-    const etherprice = props.etherprice;
+    const block = props.block;
+    const transactions = props.transactions;
+    const timeStamp = props.timeStamp;
+    const hash = props.hash;
+    const nonce = props.nonce;
+    const difficulty = props.difficulty;
+    const reward = props.reward;
+    const miner = props.miner;
+    const gasused = props.gasused;
 
 
 
@@ -19,10 +24,10 @@ const Result = (props) => {
         <div id='container' className='container'>
 
             <div className='navDiv'>
-                
+
                 <nav>
                     <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><Link to="/" className='linkHome'><span>ETHEXPLORER</span></Link></div>
-                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Result</span><div className='homeBorderBottom'></div></div>
+                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Block</span><div className='homeBorderBottom'></div></div>
                     <div className='navDiv_optionsDiv'>
                         <ul>
                             <li>Blockchain <i class="fa-solid fa-angle-down"></i></li>
@@ -41,61 +46,66 @@ const Result = (props) => {
             </div>
 
 
-            <div className='body'>
+            <div className='bodyblock'>
                 <div className='body1'>
-                <caption>Address Details</caption>
+                    <caption>Block Details</caption>
                     <hr />
                     <div className='body11'>
 
                         <div>
-                            <p><strong>Address : </strong>{account}</p>
+                            <p><strong>Block : </strong>{block}</p>
                         </div>
                         <div>
-                            <p><strong>Balance : </strong><span className='balanceSpan'>{balance}</span></p>
+                            <p><strong>Transactions : </strong><span className='balanceSpan'>{transactions}</span></p>
                         </div>
                         <div>
-                            <p><strong>Ether value : </strong><span style={{color: 'rgba(31, 199, 212, 1)'}}>$ {etherprice}</span></p>
+                            <p><strong>TimeStamp : </strong><span style={{ color: 'rgba(31, 199, 212, 1)' }}>{timeStamp}</span></p>
                         </div>
                     </div>
                 </div>
 
-                <div className='body2'>
-                    <caption>Recent Transactions</caption>
+                <div className='blockbodyy'>
 
-                    <hr />
+                    <div className='blockbodyDiv'>
+                        <div className='blockbody'>
+                            <div className='blockbody1'><p>Additional Info</p></div>
 
-                    <div className='body22'>
-
-                        <table style={{ fontSize: '1em' }}>
-                            <thead>
-                                <tr>
-                                    <th >Transaction Hash</th>
-                                    <th >Block Number</th>
-                                    <th >Time</th>
-                                    <th >Value(Ether)</th>
-                                    <th >Gas Used(Gwei)</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id='resultList'>
-                            </tbody>
-
-                        </table>
-
-                        <div className='recentTransDiv'>
-                            <div className='recentTrans'>
-                                <p>Recent Transactions</p>
-                            </div>
-
-                            <div className='recentTrans1'>
-                                <div id='transStamp'>
-                                    
+                            <div className='blockbody2'>
+                                <div  className='blockbody2para1'>
+                                    <p><strong>Block Hash :</strong></p>
+                                    <p>{hash}</p>
                                 </div>
 
+                                <div  className='blockbody2para2'>
+                                    <p><strong>Nonce :</strong></p>
+                                    <p>{nonce}</p>
+                                </div>
+
+                                <div  className='blockbody2para3'>
+                                    <p><strong>Total Difficulty :</strong></p>
+                                    <p>{difficulty}</p>
+                                </div>
+                                
+                            </div>
+
+                            <div className='blockbody3'>
+
+                            <div  className='blockbody3para1'>
+                                    <p><strong>Block Miner :</strong></p>
+                                    <p>{miner}</p>
+                                </div>
+
+                                <div  className='blockbody3para2'>
+                                    <p><strong>Block Reward :</strong></p>
+                                    <p>{reward} Ether</p>
+                                </div>
+                                
+                                <div  className='blockbody3para3'>
+                                    <p><strong>GasUsed (Gwei) :</strong></p>
+                                    <p>{gasused}</p>
+                                </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -168,4 +178,4 @@ const Result = (props) => {
 }
 
 
-export default Result;
+export default Block;

@@ -7,7 +7,6 @@ import metamasklogo from '../css/MetamaskIcon.png'
 const Land = (props) => {
     const handlechange = props.handlechange
     const message = props.message;
-    const balance = props.balance;
     const metaconnect = props.metaconnect;
     const manualconnect = props.manualconnect;
 
@@ -59,7 +58,7 @@ const Land = (props) => {
                 </div>
             </div>
 
-            <div className='errorMes'><p>{balance}</p></div>
+
 
             <div className='infoDis'>
                 <div className='infoDisplayDiv'>

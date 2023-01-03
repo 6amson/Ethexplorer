@@ -3,9 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500&display=swap');
 
 /*  
-rgba(31, 199, 212, 1); blue
- background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+rgba(31, 199, 212, 1) blue
+ background: linear-gradient(180deg, #8051D6 0%, #492286 100%)
 */
+.recentTransDiv{
+display: none;
+}
+
+.linkHome{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
 
 *{
   font-family: 'Sora', sans-serif;
@@ -122,10 +133,6 @@ nav{
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
- 
-  
-
-
 }
 
 .navDiv_logoDivSpan {
@@ -515,6 +522,9 @@ display: flex;
   cursor: pointer;
 }
 
+.fa-plus{
+  display: none;
+}
 
 
 
@@ -590,43 +600,217 @@ text-fill-color: transparent;
 
 
 /*          RESULT BODY STYLES         */
+
 .body{
-  height: 100vh;
-  border: solid 2px greenyellow;
+  overflow-y: hidden;
+  height: fit-content;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 0.5fr 2fr;
   padding: 2em;
   row-gap: 2em;
-  color: white;
-  
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+hr{
+
+
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .body1{
-  min-width: 22em;
-  border: solid 2px rgb(221, 255, 0);
-  display: grid;
- 
-}
-
-.body1 > div{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.body1 > div:first-child{
-  font-size: 0.9em;
-}
-
-.body1 > div > i{
-  color: #9F496E;
-  margin-right: 0.4em;
+  margin-bottom: 0;
+  height: fit-content;
 }
 
 .body2{
-  border: solid 2px blue;
+  position: relative;
+  margin-top: 0;
 }
 
+.balanceSpan{
+  width: fit-content;
+  padding: 0.2em;
+  font-size: 0.8em;
+  background: rgba(31, 199, 212, 1);
+  border-radius: 0.3em;
+  color: white;
+}
+
+.body11{
+  font-size: 1.2em;
+  padding: 1em;
+  display: grid;
+  border-radius: 0.3em;
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+}
+
+.body11 > div{
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.body11 > div:first-child{
+  font-size: 0.9em;
+}
+
+
+.body22{
+  overflow-y: visible;
+  border: solid 3px silver;
+  border-radius: 0.3em;
+}
+
+caption{
+  width: max-content;
+  font-size: 1em;
+  padding-left: 1em;
+  font-weight: 500;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+thead{
+  border-radius: 0.3em;
+  background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+  color: white;
+
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 15%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 20%;
+}
+
+thead th:nth-child(5) {
+  width: 20%;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody > tr > td {
+  text-align: center;
+}
+
+tbody{
+  background: white;
+}
+tbody > tr{
+  border-bottom: solid 2px silver;
+}
+
+
+
+
+
+/************ BLOCK BODY  **************/
+
+.bodyblock{
+  background: linear-gradient(180deg, #ede7fa 50%,  #d7c6fa 100%);;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 2em;
+  display: block;
+}
+
+.blockbodyy{
+  height: 80%;
+}
+
+.blockbodyDiv{
+  border: solid rgb(250, 250, 250) ;
+  height: 100%;
+  margin-top: 2em;
+  border-radius: 0.3em;
+  background-color: #FFFFFF;
+}
+
+.blockbody{
+  height: 100%;
+  display: grid;
+  display: block;
+  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.blockbody > div{
+  padding-left: 2em;
+}
+
+.blockbody1{
+
+  height: max-content;
+  border-bottom: solid 2px silver;
+  position: relative;
+  padding: 0.5em;
+}
+
+.blockbody2{
+  border-bottom: solid 2px silver;
+}
+
+.blockbody1 > p{
+  width: max-content;
+  border-bottom: solid 2px rgba(118, 69, 217, 1);
+  position: inherit;
+  bottom: -0.65em;
+
+}
+
+.blockbody2 > div, .blockbody3 > div{
+  display: flex;
+margin-bottom: 2em;
+justify-content: space-between;
+}
+
+.blockbody2, .blockbody3{
+  margin-bottom: 2em;
+} 
+
+.blockbody2{
+  margin-top: 1.5em;
+}
+
+.blockbody2 > div > p:last-child, .blockbody3 > div > p:last-child{
+  margin-right: 3em;
+}
+
+.blockbody3{
+  padding-top: 0;
+  margin-top: 0;
+}
 
 
 
@@ -720,9 +904,6 @@ height: 3em;
     padding: 1em;
    
   }
-
-
-
 
   .vl, .vl2, .vh, .vh2, .vh3{
     display: none;
@@ -822,12 +1003,16 @@ height: 3em;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr;
   padding: 2em;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .footer2Div, .footer3Div, .footer4Div{
   display: flex;
   justify-content: space-between;
+}
+
+.fa-plus{
+  display: inline-block;
 }
 }
 
@@ -890,7 +1075,6 @@ height: 3em;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 0.6fr 0.4fr;
-    border: solid red 2px;
   }
  
   
@@ -964,6 +1148,7 @@ font-size: 1.1em;
 .lastSection{
 display: flex;
 justify-content: space-between;
+
 }
 
 
@@ -981,6 +1166,65 @@ justify-content: space-between;
   font-size: 1em;
   margin-left: 0.5em;
 }
+
+.blockbody2 > div > p:last-child, .blockbody3 > div > p:last-child{
+  margin-right: 1em;
+}
+}
+
+
+
+@media screen and (max-width: 800px){
+  .body11{
+    font-size: 0.8em;
+    padding: 1em;
+    display: grid;
+    border-radius: 0.3em;
+    background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+  }
+
+  .body2 > caption{
+    display: none;
+  }
+
+  Table{
+    display: none;
+  } 
+
+  .recentTransDiv{
+    
+    display: grid;
+    display: block;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    width: inherit;
+  }
+
+  .recentTrans{
+    
+    padding: 0.5em;
+    background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
+    height: fit-content;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  .recentTrans1{
+    border-radius: 0.3em;
+    height: fit-content;
+    padding: 0.5em;
+    font-size: 0.8em;
+  }
+
+  #transStamp > div > div{
+    display: grid;
+  
+  }
+
+  .blockbodyDiv{
+    font-size: 0.8em;
+  }
 }
 
 

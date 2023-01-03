@@ -2,21 +2,22 @@ import { useHistory } from "react-router-dom";
 import Land from './Land'
 import { useState } from 'react';
 import '../css/index.css'
-import { INFURA } from "../server/keys";
+
 import "../components/Landingpage";
-import Resultpage from './Resultpage';
-import { render } from '@testing-library/react';
-const { ethers } = require("ethers");
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
+
+import { ETHERSCANID } from '../server/keys';
 
 
 
-//import { metaconnect, manualconnect, accounts} from '../server/server';
 
 
 
-let infura = INFURA;
+const endpoint = 'https://api.etherscan.io/api';
+const etherscanId = ETHERSCANID;
 
-const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${infura}`)
+
+
 let accounts;
 
 
@@ -24,13 +25,8 @@ let accounts;
 const Landingpage = () => {
 
     const [message, setMessage] = useState('');
-    const [account, setAccount] = useState('');
-    const [balance, setBalance] = useState('');
 
     const loader = document.getElementById('loader');
-    //const connectBtn = document.getElementById('connectBtn')
-    //const metamaskBtn = document.getElementById('MetamaskBtn')
-    const input = document.getElementById('input');
     const container = document.getElementById('container');
     const button = document.querySelectorAll('#button');
 
@@ -41,20 +37,36 @@ const Landingpage = () => {
     }
 
 
-    //console.log(balance);
-
-    const manualconnect = async () => {
-        let balances;
+    const manualconnect = () => {
         //console.log(`${input.value}`.trim());
+        async function determineBlock() {
+            const finalMessage = Number(message.trim()).toString(16);
+            console.log(finalMessage);
 
-        balances = await provider.getBalance(message.trim());
-        balances = ethers.utils.formatEther(balances);
-        setBalance(balances);
-        const gasprice = await provider.getGasPrice(message.trim());
-        console.log(ethers.utils.formatUnits(gasprice, "gwei"));
+            await fetch(endpoint + `?module=proxy&action=eth_getBlockByNumber&tag=${finalMessage}&boolean=true&apikey=${etherscanId}`)
+                .then((res) => res.json())
+                .then((data) => {
+                    if(data.result !== null){   
+                    console.log(data)
+                    history.push({
+                        pathname: "/blockresult",
+                        state: {
+                            blockPri: message.trim()
+                        }
+                    })
+                    }else{
+                        console.log('kosi much')
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+
+        determineBlock();
 
     };
-  
+
     //console.log(account);
 
 
@@ -85,23 +97,19 @@ const Landingpage = () => {
                     container.style.opacity = '1';
                     loader.style.opacity = '0';
                 }
-                else{
+                else {
                     alert('Thre is an error connecting with your metamask');
                 }
-                //console.log(err.code)
             })
-        
+
             if (accounts[0] !== 'null') {
-                //window.location.href = '/result'
-                //return (account);
                 console.log('metamask connected');
-                setAccount(accounts[0]);
-                
-                console.log(account);
-                //console.log(accounts[0]);
                 history.push({
                     pathname: "/result",
-                    state: { detail: accounts[0]}
+                    state: {
+                        accountPri: accounts[0],
+
+                    }
                 })
             }
             //balance = await provider.getBalance(accounts[0]);
@@ -124,13 +132,11 @@ const Landingpage = () => {
 
         }
 
-        return (account);
-
     }
 
     return (
         <div>
-            <Land message={message} balance={balance} manualconnect={manualconnect} handlechange={handlechange} metaconnect={metaconnect} />
+            <Land message={message} manualconnect={manualconnect} handlechange={handlechange} metaconnect={metaconnect} />
         </div>
     );
 }
