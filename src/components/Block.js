@@ -72,7 +72,7 @@ const Block = (props) => {
 
                             <div className='blockbody2'>
                                 <div  className='blockbody2para1'>
-                                    <p><strong>Block Hash :</strong></p>
+                                    <p><strong>Hash :</strong></p>
                                     <p>{hash}</p>
                                 </div>
 
@@ -91,12 +91,12 @@ const Block = (props) => {
                             <div className='blockbody3'>
 
                             <div  className='blockbody3para1'>
-                                    <p><strong>Block Miner :</strong></p>
+                                    <p><strong>Miner: </strong></p>
                                     <p>{miner}</p>
                                 </div>
 
                                 <div  className='blockbody3para2'>
-                                    <p><strong>Block Reward :</strong></p>
+                                    <p><strong>Reward :</strong></p>
                                     <p>{reward} Ether</p>
                                 </div>
                                 
