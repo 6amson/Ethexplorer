@@ -9,6 +9,14 @@ const Land = (props) => {
     const message = props.message;
     const metaconnect = props.metaconnect;
     const manualconnect = props.manualconnect;
+    const timestamp1 = props.timestamp1;
+    const timestamp2 = props.timestamp2;
+    const totalnodecount = props.totalnodecount;
+    const etherbtc = props.etherbtc;
+    const ethersupply = props.ethersupply;
+    const mainetherprice = props.mainetherprice;
+    const recentblock = props.recentblock;
+    const gasprice = props.gasprice;
 
     return (
 
@@ -42,6 +50,7 @@ const Land = (props) => {
                     <div className='bodyDiv_paraText'><h3>Get access to all transactions that occur on the ethereum blockchain.</h3></div>
                     <div className='bodyDiv_input' >
                         <input
+                        className='Input'
                             onChange={handlechange}
                             value={message}
                             type='text'
@@ -66,10 +75,10 @@ const Land = (props) => {
                         <i className="fa-brands fa-ethereum"></i><div className='infoDisplayPriceDiv'><span>ETHER PRICE</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
-                                <span>$ 1, 182.32</span>
+                                <span>${mainetherprice}</span>
                             </div>
                             <div className='infoDisplayValueDiv2'>
-                                <span>2.58%</span><i class="fa-solid fa-angle-down"></i>
+                                <span>{timestamp2}</span><i class="fa-solid fa-angle-down"></i>
                             </div>
 
                         </div>
@@ -78,11 +87,12 @@ const Land = (props) => {
                     </div>
 
                     <div className='infoDisplayFirstDiv'>
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i><div className='infoDisplayPriceDiv'><span>TRANSACTIONS</span></div>
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i><div className='infoDisplayPriceDiv'><span>TOTAL ETHER SUPPLY</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
-                                <span>$ 1, 182.32</span>
+                                <span>{ethersupply}</span>
                             </div>
+                            
 
                             <div className='vh2'></div>
                             <div className='vl2'></div>
@@ -90,10 +100,10 @@ const Land = (props) => {
                     </div>
 
                     <div className='infoDisplayFirstDiv infoDisplayFirstDivBlock'>
-                        <i class="fa-solid fa-cube"></i><div className='infoDisplayPriceDiv'><span>BLOCKS</span></div>
+                        <i class="fa-solid fa-cube"></i><div className='infoDisplayPriceDiv'><span>LATEST BLOCK</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
-                                <span>$ 1, 182.32</span>
+                                <span>{recentblock}</span>
                             </div>
 
                             <div className='vh3'></div>
@@ -101,21 +111,23 @@ const Land = (props) => {
                     </div>
 
                     <div className='infoDisplayFirstDiv'>
-                        <i class="fa-solid fa-earth-oceania"></i><div className='infoDisplayPriceDiv'><span>MARKET CAP</span></div>
+                        <i class="fa-solid fa-earth-oceania"></i><div className='infoDisplayPriceDiv'><span>ETH/BTC</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
-                                <span>$ 1, 182.32</span>
+                                <span>{etherbtc}</span>
                             </div>
-
+                            <div className='infoDisplayValueDiv2'>
+                                <span>{timestamp1}</span><i class="fa-solid fa-angle-down"></i>
+                            </div>
 
                         </div>
                     </div>
 
                     <div className='infoDisplayFirstDiv'>
-                        <i class="fa-solid fa-clock"></i><div className='infoDisplayPriceDiv'><span>TRANSACTIONS PER SEC</span></div>
+                    <i class="fa-solid fa-share-nodes"></i><div className='infoDisplayPriceDiv'><span>TOTAL NODE COUNT</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
-                                <span>$ 1, 182.32</span>
+                                <span>{totalnodecount}</span>
                             </div>
 
 
@@ -123,10 +135,10 @@ const Land = (props) => {
                     </div>
 
                     <div className='infoDisplayFirstDiv infoDisplayFirstDivMGP'>
-                        <i class="fa-solid fa-dollar-sign"></i><div className='infoDisplayPriceDiv'><span>MED. GAS PRICE</span></div>
+                    <i class="fa-solid fa-fire"></i><div className='infoDisplayPriceDiv'><span>MED. GAS PRICE(Gwei)</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
-                                <span>$ 1, 182.32</span>
+                                <span>{gasprice}</span>
                             </div>
 
                         </div>

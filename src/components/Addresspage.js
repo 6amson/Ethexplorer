@@ -2,14 +2,11 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
-import Result from './Result'
-//import { useEffect } from 'react';
-//import { INFURA } from "../server/keys";
+import Address from './Address';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { ETHERSCANID } from '../server/keys';
 import { useState } from 'react';
-//const axios = require('axios');
-//import "../components/Landingpage";
-//const { ethers } = require("ethers");
+
 
 TimeAgo.addDefaultLocale(en)
 
@@ -24,18 +21,17 @@ const endpoint = 'https://api.etherscan.io/api';
 const etherscanId = ETHERSCANID;
 const timeAgo = new TimeAgo('en-US')
 
-const Resultpage = () => {
+const Addresspage = () => {
+    let accounts;
     const location = useLocation();
+    const address = location.state.addressPri;
+    const history = useHistory();
+    const button = document.querySelectorAll('#button');
+
     const account = location.state.accountPri;
 
     const [balance, setBalance] = useState('');
     const [mainEtherPrice, setMainEtherPrice] = useState('');
-    //const [clientEtherPrice, setClientEtherPrice] = useState('');
-    //const [clientBlockNumber, setClientBlockNumber] = useState('');
-    //const [clientTimeStamp, setClientTimeStamp] = useState('');
-    //const [clientHash, setClientHash] = useState('');
-    //const [clientValue, setClientValue] = useState('');
-    //const [clientGas, setClientGas] = useState('');
 
     const denom = 1000000000000000000;
 
@@ -71,7 +67,7 @@ const Resultpage = () => {
 
 
         async function getWalletBalance() {
-            await fetch(endpoint + `?module=account&action=balance&address=${account}&apikey=${etherscanId}`)
+            await fetch(endpoint + `?module=account&action=balance&address=${address}&apikey=${etherscanId}`)
                 .then((response) => response.json())
                 .then((data) => { 
                     setBalance(data.result);
@@ -81,8 +77,7 @@ const Resultpage = () => {
 
         getWalletBalance()
 
-        async function getAccounbtList() {
-        await fetch(endpoint + `?module=account&action=txlist&address=${account}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${etherscanId}`)
+        await fetch(endpoint + `?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${etherscanId}`)
             .then((response) => response.json())
             .then((data) => {
                 if (data.status == 1) {
@@ -155,11 +150,6 @@ const Resultpage = () => {
                         div2.append(para5);
                         transStamp.append(div1)
                         transStamp.append(div2);
-                       
-                    
-                        
-
-
                     }
 
 
@@ -172,7 +162,7 @@ const Resultpage = () => {
                     listrow.append(listdetail);
                     resultList.append(listrow);
 
-                    //mobile view
+                    //No Transaction
                     const div1 = document.createElement('div');
                     const para1 = document.createElement('p');
                     const transStamp = document.getElementById('transStamp');
@@ -183,9 +173,6 @@ const Resultpage = () => {
                 }
             })
             .catch((err) => console.log(err));
-        }
-
-        getAccounbtList()
     }
 
     const dividedBalance = expo(balance / denom, 3) + ' Ether';
@@ -194,35 +181,71 @@ const Resultpage = () => {
     const midBalance = (balance/denom) * mainEtherPrice; 
    //const finalBalance = dividedBalance * mainEtherPrice;
 
+   const confirmMeta = async () => {
+    if (window.ethereum) {
 
-   
+        console.log('metamask present');
+        accounts = await window.ethereum.request({
+            method: 'eth_requestAccounts'
+        }).catch((err) => {
 
-
-
- useEffect(() => {
-     getTxList()
-     console.log('use effects used');
- }, []);
-
-   
-
+            //error handling
+            if (err.code == '-32002') {
 
 
+                //disable buttons
+                button.disabled = true;
 
+                alert('Your connection is pending. Please open metamask to continue.')
+                console.log('worse than we imagined')
+            }
+            else if (err.code == '4001') {
+                alert('You rejected the request to connect Metamask.');
+                button.disabled = false;
 
-    const confirmMeta = () => {
-        alert('You\'ve connected your Metamask wallet.')
+            }
+            else {
+                alert('Thre is an error connecting with your metamask');
+            }
+        })
+
+        if (accounts[0] !== 'null') {
+            console.log('metamask connected');
+            history.push({
+                pathname: "/result",
+                state: {
+                    accountPri: accounts[0],
+
+                }
+            })
+        }
+     
     }
+    else {
+        alert('You do not have Metamask.');
+
+    }
+}
+   
+
+
+
+    useEffect(() => {
+
+        getTxList()
+
+        console.log('use effects used');
+    }, []);
+
+   
 
 
 
     return (
-
-
         <div>
-            <Result /*message={message}*/ etherprice={midBalance} balance={dividedBalance} account={account} confirmMeta={confirmMeta} />
+            <Address /*message={message}*/ etherprice={midBalance} balance={dividedBalance} address={address} confirmMeta={confirmMeta} />
         </div>
     )
 }
 
-export default Resultpage;
+export default Addresspage;

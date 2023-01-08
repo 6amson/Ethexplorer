@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
 import Block from './Block';
 import { useHistory } from "react-router-dom";
+import Transhash from './Transhash';
 //import { useEffect } from 'react';
 //import { INFURA } from "../server/keys";
 import { ETHERSCANID } from '../server/keys';
@@ -23,30 +24,31 @@ const endpoint = 'https://api.etherscan.io/api';
 
 //let infura = INFURA;
 const etherscanId = ETHERSCANID;
-const timeAgo = new TimeAgo('en-US');
+const timeAgo = new TimeAgo('en-US')
 
 let accounts;
 
-const Blockpage = () => {
+const Transhashpage = () => {
     const location = useLocation();
-    const block = location.state.blockPri;
+    const hash = location.state.hashPri;
     const history = useHistory();
     const button = document.querySelectorAll('#button');
     //const account = '0xB9EC6069F13F88476229f2Df442Dcd997b736B32';
-
-    const [Miner, setMiner] = useState('');
-    const [mainEtherPrice, setMainEtherPrice] = useState('');
-    const [Transactionslength, setTransactionslength] = useState('');
-    const [difficulty, setdifficulty] = useState('');
-    const [timeStamp, setClientTimeStamp] = useState('');
-    const [Hash, setHash] = useState('');
-    const [Nonce, setNonce] = useState('');
-    const [Reward, setReward] = useState('');
-    const [GasUsed, setGasUsed] = useState('');
+    //const [Miner, setMiner] = useState('');
+    //const [mainEtherPrice, setMainEtherPrice] = useState('');
+    const [blockNumber, setBlockNumber] = useState('');
+    const [from, setFrom] = useState('');
+    const [to, setTo] = useState('');
+    const [value, setValue] = useState('');
+    const [timeStamp, setTimeStamp] = useState('');
+    const [status, setStatus] = useState('');
+    const [type, setType] = useState('');
+    const [gasUsed, setGasUsed] = useState('');
+    const [gas, setGas] = useState('');
 
     const denom = 1000000000000000000;
 
-    const finalBlock = Number(block.trim()).toString(16);
+
 
 
     const confirmMetaBlock = async () => {
@@ -103,6 +105,8 @@ const Blockpage = () => {
         return string.slice(0, limit) + "...";
     }
 
+    const finalhash = truncate(hash, 34)
+
 
     function expo(x, f) {
         return Number.parseFloat(x).toExponential(f);
@@ -111,20 +115,28 @@ const Blockpage = () => {
 
     async function getTxList() {
 
-        async function determineBlock() {
-            console.log(block);
-            await fetch(endpoint + `?module=proxy&action=eth_getBlockByNumber&tag=${finalBlock}&boolean=true&apikey=${etherscanId}`)
+        async function determineTransaction() {
+  
+            await fetch(endpoint + `?module=account&action=txlistinternal&txhash=${hash}&apikey=${etherscanId}`)
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data)
-                    console.log(data.result.transactions.length)
-                    setTransactionslength(data.result.transactions.length);
-                    setClientTimeStamp(timeAgo.format(parseInt(data.result.timestamp) * 1000));
-                    setHash(truncate(data.result.hash, 40))
-                    setNonce(parseInt(data.result.nonce).toExponential(7));
-                    setdifficulty(parseInt(data.result.totalDifficulty).toExponential(7));
-                    setGasUsed(parseInt(data.result.gasUsed));
 
+                    setType(data.result[0].type);
+                    setBlockNumber(data.result[0].blockNumber);
+                    setFrom(data.result[0].from)
+                    //setFrom(truncate(data.result[0].from, 34))
+                    setTo(data.result[0].to);
+                    //setTo(truncate(data.result[0].to, 34))
+                    setValue(data.result[0].value / denom);
+                    setGasUsed(data.result[0].gasUsed);
+                    setGas(data.result[0].gas);
+                    setTimeStamp(timeAgo.format(parseInt(data.result[0].timeStamp) * 1000));
+                    if(data.result[0].isError == 0){
+                        setStatus('Success');
+                    }else{
+                        setStatus('Cancelled');
+                    }
                     
 
                 })
@@ -133,48 +145,15 @@ const Blockpage = () => {
                 })
         };
 
-        determineBlock();
-
-        async function getBlockReward() {
-            await fetch(endpoint + `?module=block&action=getblockreward&blockno=${block}&apikey=${etherscanId}`)
-                .then((res) => res.json())
-                .then((data) => {
-
-                    //console.log(data);
-                    setMiner(data.result.blockMiner);
-                    setReward(data.result.blockReward / denom)
-
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
-
-        getBlockReward();
-
-
-
-        async function getEtherPrice() {
-            await fetch(endpoint + `?module=stats&action=ethprice&apikey=${etherscanId}`)
-                .then((response) => response.json())
-                .then((data) => {
-                    //console.log(data.result.ethusd);
-                    setMainEtherPrice(data.result.ethusd);
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        };
-
-        //getEtherPrice()
+        determineTransaction()
     }
 
 
     useEffect(() => {
 
-        getTxList()
+        getTxList();
 
-        console.log('use effects used on blockpage');
+        console.log('use effects used on TransactionHashpage');
     }, []);
 
 
@@ -184,10 +163,10 @@ const Blockpage = () => {
 
 
         <div>
-            <Block gasused={GasUsed} miner={Miner} reward={Reward} difficulty={difficulty} nonce={Nonce} hash={Hash} timeStamp={timeStamp} transactions={Transactionslength} block={block} confirmMeta={confirmMetaBlock} />
+            <Transhash gas={gas} gasused={gasUsed} from={from} to={to} value={value} type={type} status={status} timeStamp={timeStamp} blockNumber={blockNumber} hash={finalhash} confirmMeta={confirmMetaBlock} />
         </div>
     )
 }
 
 
-export default Blockpage;
+export default Transhashpage;

@@ -6,17 +6,11 @@ import { Link } from 'react-router-dom';
 
 
 
-const Block = (props) => {
+const Address = (props) => {
     const confirmMeta = props.confirmMeta
-    const block = props.block;
-    const transactions = props.transactions;
-    const timeStamp = props.timeStamp;
-    const hash = props.hash;
-    const nonce = props.nonce;
-    const difficulty = props.difficulty;
-    const reward = props.reward;
-    const miner = props.miner;
-    const gasused = props.gasused;
+    const address = props.address;
+    const balance = props.balance;
+    const etherprice = props.etherprice;
 
 
 
@@ -24,10 +18,10 @@ const Block = (props) => {
         <div id='container' className='container'>
 
             <div className='navDiv'>
-
+                
                 <nav>
                     <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><Link to="/" className='linkHome'><span>ETHEXPLORER</span></Link></div>
-                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Block</span><div className='homeBorderBottom'></div></div>
+                    <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Result</span><div className='homeBorderBottom'></div></div>
                     <div className='navDiv_optionsDiv'>
                         <ul>
                             <li>Blockchain <i class="fa-solid fa-angle-down"></i></li>
@@ -46,66 +40,62 @@ const Block = (props) => {
             </div>
 
 
-            <div className='bodyblock'>
+            <div className='body'>
                 <div className='body1'>
-                    <caption>Block Details</caption>
+                <caption>Address Details</caption>
                     <hr />
                     <div className='body11'>
 
-                        <div>
-                            <p><strong>Block : </strong>{block}</p>
+                        <div style={{display: 'flex'}} className='body11Address'>
+                            <p><strong>Address : </strong></p>
+                            <p>{address}</p>
                         </div>
                         <div>
-                            <p><strong>Transactions : </strong><span className='balanceSpan'>{transactions}</span></p>
+                            <p><strong>Balance : </strong><span className='balanceSpan'>{balance}</span></p>
                         </div>
                         <div>
-                            <p><strong>TimeStamp : </strong><span style={{ color: 'rgba(31, 199, 212, 1)' }}>{timeStamp}</span></p>
+                            <p><strong>Ether value : </strong><span style={{color: 'rgba(31, 199, 212, 1)'}}>$ {etherprice}</span></p>
                         </div>
                     </div>
                 </div>
 
-                <div className='blockbodyy'>
+                <div className='body2'>
+                    <caption>Recent Transactions</caption>
 
-                    <div className='blockbodyDiv'>
-                        <div className='blockbody'>
-                            <div className='blockbody1'><p>Additional Info</p></div>
+                    <hr />
 
-                            <div className='blockbody2'>
-                                <div style={{display: 'flex',}} className='blockbody2para1'>
-                                    <p><strong>Hash :</strong></p>
-                                    <p>{hash}</p>
-                                </div>
+                    <div className='body22'>
 
-                                <div  style={{display: 'flex',}} className='blockbody2para2'>
-                                    <p><strong>Nonce :</strong></p>
-                                    <p>{nonce}</p>
-                                </div>
+                        <table style={{ fontSize: '1em' }}>
+                            <thead>
+                                <tr>
+                                    <th >Transaction Hash</th>
+                                    <th >Block Number</th>
+                                    <th >Time</th>
+                                    <th >Value(Ether)</th>
+                                    <th >Gas Used(Gwei)</th>
+                                </tr>
+                            </thead>
 
-                                <div  style={{display: 'flex',}} className='blockbody2para3'>
-                                    <p><strong>Total Difficulty :</strong></p>
-                                    <p>{difficulty}</p>
-                                </div>
-                                
+                            <tbody id='resultList'>
+                            </tbody>
+
+                        </table>
+
+                        <div className='recentTransDiv'>
+                            <div className='recentTrans'>
+                                <p>Recent Transactions</p>
                             </div>
 
-                            <div className='blockbody3'>
-
-                            <div style={{display: 'flex',}} className='blockbody3para1'>
-                                    <p><strong>Miner: </strong></p>
-                                    <p>{miner}</p>
+                            <div className='recentTrans1'>
+                                <div id='transStamp'>
+                                    
                                 </div>
 
-                                <div  className='blockbody3para2'>
-                                    <p><strong>Reward :</strong></p>
-                                    <p>{reward} Ether</p>
-                                </div>
-                                
-                                <div  className='blockbody3para3'>
-                                    <p><strong>GasUsed (Gwei) :</strong></p>
-                                    <p>{gasused}</p>
-                                </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
 
@@ -178,4 +168,4 @@ const Block = (props) => {
 }
 
 
-export default Block;
+export default Address;

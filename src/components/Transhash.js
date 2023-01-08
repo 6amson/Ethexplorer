@@ -6,17 +6,18 @@ import { Link } from 'react-router-dom';
 
 
 
-const Block = (props) => {
+const Transhash = (props) => {
     const confirmMeta = props.confirmMeta
-    const block = props.block;
-    const transactions = props.transactions;
+    const blockNumber = props.blockNumber;
+    const value = props.value;
     const timeStamp = props.timeStamp;
     const hash = props.hash;
-    const nonce = props.nonce;
-    const difficulty = props.difficulty;
-    const reward = props.reward;
-    const miner = props.miner;
+    const from = props.from;
+    const to = props.to;
+    const type = props.type;
+    const status = props.status;
     const gasused = props.gasused;
+    const gas = props.gas;
 
 
 
@@ -48,16 +49,26 @@ const Block = (props) => {
 
             <div className='bodyblock'>
                 <div className='body1'>
-                    <caption>Block Details</caption>
+                    <caption>Transaction Hash Details</caption>
                     <hr />
                     <div className='body11'>
 
                         <div>
-                            <p><strong>Block : </strong>{block}</p>
+                            <p><strong>Tx# Hash : </strong>{hash}</p>
                         </div>
+
                         <div>
-                            <p><strong>Transactions : </strong><span className='balanceSpan'>{transactions}</span></p>
+                            {status == 'Success' &&
+                            <p><strong>Status : </strong><span className='balanceSpan' style={{background: 'rgba(104, 225, 93, 1)', color: 'black'}}>{status}</span></p>
+                            }
                         </div>
+
+                        <div>
+                            {status == 'Cancelled' &&
+                            <p><strong>Status: </strong><span className='balanceSpan' style={{background: '#f87070', color: 'black'}}>{status}</span></p>
+                            }
+                        </div>
+
                         <div>
                             <p><strong>TimeStamp : </strong><span style={{ color: 'rgba(31, 199, 212, 1)' }}>{timeStamp}</span></p>
                         </div>
@@ -71,38 +82,38 @@ const Block = (props) => {
                             <div className='blockbody1'><p>Additional Info</p></div>
 
                             <div className='blockbody2'>
-                                <div style={{display: 'flex',}} className='blockbody2para1'>
-                                    <p><strong>Hash :</strong></p>
-                                    <p>{hash}</p>
+                                <div  className='blockbody2para1'>
+                                    <p><strong>Block Number :</strong></p>
+                                    <p>{blockNumber}</p>
+                                </div> 
+
+                                <div style={{display: 'flex',}} className='blockbody2para2'>
+                                    <p><strong>From :</strong></p>
+                                    <p>{from}</p>
                                 </div>
 
-                                <div  style={{display: 'flex',}} className='blockbody2para2'>
-                                    <p><strong>Nonce :</strong></p>
-                                    <p>{nonce}</p>
-                                </div>
-
-                                <div  style={{display: 'flex',}} className='blockbody2para3'>
-                                    <p><strong>Total Difficulty :</strong></p>
-                                    <p>{difficulty}</p>
+                                <div style={{display: 'flex',}} className='blockbody2para3'>
+                                    <p><strong>To :</strong></p>
+                                    <p>{to}</p>
                                 </div>
                                 
                             </div>
 
                             <div className='blockbody3'>
 
-                            <div style={{display: 'flex',}} className='blockbody3para1'>
-                                    <p><strong>Miner: </strong></p>
-                                    <p>{miner}</p>
+                            <div  className='blockbody3para1'>
+                                    <p><strong>Value: </strong></p>
+                                    <p>{value} Ether</p>
                                 </div>
 
                                 <div  className='blockbody3para2'>
-                                    <p><strong>Reward :</strong></p>
-                                    <p>{reward} Ether</p>
+                                    <p><strong>Type :</strong></p>
+                                    <p>{type}</p>
                                 </div>
                                 
                                 <div  className='blockbody3para3'>
-                                    <p><strong>GasUsed (Gwei) :</strong></p>
-                                    <p>{gasused}</p>
+                                    <p><strong>Gas (Gwei) :</strong></p>
+                                    <p>{gas}</p>|<p className='balanceSpan' style={{background: "rgba(31, 199, 212, 0.31)", color: "rgba(10, 142, 152, 1)"}}>{gasused} used</p>
                                 </div>
                             </div>
                         </div>
@@ -178,4 +189,4 @@ const Block = (props) => {
 }
 
 
-export default Block;
+export default Transhash;
