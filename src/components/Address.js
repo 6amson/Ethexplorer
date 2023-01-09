@@ -13,7 +13,6 @@ const Address = (props) => {
     const etherprice = props.etherprice;
 
 
-
     return (
         <div id='container' className='container'>
 

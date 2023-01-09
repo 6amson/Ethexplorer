@@ -82,7 +82,7 @@ const Resultpage = () => {
         getWalletBalance()
 
         async function getAccounbtList() {
-        await fetch(endpoint + `?module=account&action=txlist&address=${account}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${etherscanId}`)
+        await fetch(endpoint + `?module=account&action=txlist&address=${account}&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=${etherscanId}`)
             .then((response) => response.json())
             .then((data) => {
                 if (data.status == 1) {

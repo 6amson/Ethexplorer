@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../css/index.css';
 import './Landingpage'
 import metamasklogo from '../css/MetamaskIcon.png'
@@ -18,13 +19,47 @@ const Land = (props) => {
     const recentblock = props.recentblock;
     const gasprice = props.gasprice;
 
+
+    let count = 0;
+    function menuClick() {
+        count++
+        console.log(count);
+
+        function resetCount(){
+            count = 0;
+        }
+
+        switch (count) {
+            case 1:
+                alert('Pretty harburger innit?');
+                break;
+            case 2:
+                alert('You do realise this doesn\'t work right');
+                break;
+            case 3:
+                alert("You\'re a stubborn one alright")
+                break;
+            case 4:
+                alert('Damn!, I give in, here is a menu')
+                break;
+            case 5:
+                alert('That will lead us back to doh...Doh, a deer, a female deer');
+                setTimeout(() => {
+                    console.log('timeout called')
+                    resetCount();
+                }, 1000)
+                break;
+
+        }
+    }
+
     return (
 
         <div id='container' className='container'>
             <div id="loader" class="center"></div>
             <div className='navDiv'>
                 <nav>
-                    <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><span>ETHEXPLORER</span></div>
+                    <div className='navDiv_logoDiv'><i className="fa-brands fa-ethereum"></i><Link to="/" className='linkHome'><span>ETHEXPLORER</span></Link></div>
                     <div className='navDiv_HomeDiv'><span className='navDiv_logoDiv'>Home</span><div className='homeBorderBottom'></div></div>
                     <div className='navDiv_optionsDiv'>
                         <ul>
@@ -36,7 +71,7 @@ const Land = (props) => {
                     <div className='navDiv_buttonDiv'>
                         <div>
                             <button onClick={metaconnect}><img src={metamasklogo} id='metamasklogomobile' alt='metamask logo' /></button>
-                            <i class="fa-solid fa-bars"></i>
+                            <i onClick={menuClick} class="fa-solid fa-bars"></i>
                         </div>
                         <button onClick={metaconnect} className='MetamaskBtn' id='MetamaskBtn'>Connect Wallet <img src={metamasklogo} id='metamasklogo' alt='metemask logo' /></button>
                     </div>
@@ -50,7 +85,7 @@ const Land = (props) => {
                     <div className='bodyDiv_paraText'><h3>Get access to all transactions that occur on the ethereum blockchain.</h3></div>
                     <div className='bodyDiv_input' >
                         <input
-                        className='Input'
+                            className='Input'
                             onChange={handlechange}
                             value={message}
                             type='text'
@@ -92,7 +127,7 @@ const Land = (props) => {
                             <div className='infoDisplayValueDiv1'>
                                 <span>{ethersupply}</span>
                             </div>
-                            
+
 
                             <div className='vh2'></div>
                             <div className='vl2'></div>
@@ -116,15 +151,13 @@ const Land = (props) => {
                             <div className='infoDisplayValueDiv1'>
                                 <span>{etherbtc}</span>
                             </div>
-                            <div className='infoDisplayValueDiv2'>
-                                <span>{timestamp1}</span><i class="fa-solid fa-angle-down"></i>
-                            </div>
+
 
                         </div>
                     </div>
 
                     <div className='infoDisplayFirstDiv'>
-                    <i class="fa-solid fa-share-nodes"></i><div className='infoDisplayPriceDiv'><span>TOTAL NODE COUNT</span></div>
+                        <i class="fa-solid fa-share-nodes"></i><div className='infoDisplayPriceDiv'><span>TOTAL NODE COUNT</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
                                 <span>{totalnodecount}</span>
@@ -135,7 +168,7 @@ const Land = (props) => {
                     </div>
 
                     <div className='infoDisplayFirstDiv infoDisplayFirstDivMGP'>
-                    <i class="fa-solid fa-fire"></i><div className='infoDisplayPriceDiv'><span>MED. GAS PRICE(Gwei)</span></div>
+                        <i class="fa-solid fa-fire"></i><div className='infoDisplayPriceDiv'><span>MED. GAS PRICE(Gwei)</span></div>
                         <div className='infoDisplayValueDiv'>
                             <div className='infoDisplayValueDiv1'>
                                 <span>{gasprice}</span>

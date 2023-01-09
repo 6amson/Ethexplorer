@@ -68,6 +68,7 @@ const Landingpage = () => {
                 if (!data) {
                     loader.style.dusplay = 'block';
                 } else if (data.result) {
+                    console.log('good block')
                     //fxn for history push
                     history.push({
                         pathname: "/blockresult",
@@ -77,6 +78,7 @@ const Landingpage = () => {
                     })
                     console.log('block accessed')
                 } else if (data.error) {
+                    console.log('bad block')
                     determineHash()
                 }
             }).catch((err) => {
@@ -91,6 +93,7 @@ const Landingpage = () => {
             .then((data) => {
 
                 if (data.status == 0) {
+                    console.log(data);
                     console.log(data.status)
                     determineAddress();
 
@@ -122,8 +125,14 @@ const Landingpage = () => {
                     console.log('nothing here')
                     loader.style.display = "none";
                     input.classList.toggle("invalid");
+
+                    setTimeout(() => {
+                        console.log('timeout called')
+                        input.classList.remove('invalid');
+                        
+                    }, 2000)
                     //input.classList.remove('invalid');
-                    //return;
+                    return;
 
                 } else if (data.status == 1) {
                     console.log('address logged', data);
@@ -246,7 +255,7 @@ const Landingpage = () => {
         await fetch(endpoint + `?module=proxy&action=eth_gasPrice&apikey=${etherscanId}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.result);
+                //console.log(data.result);
                 setGasPrice(parseInt(data.result));
             })
             .catch((err) => {
