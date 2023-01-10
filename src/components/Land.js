@@ -25,7 +25,7 @@ const Land = (props) => {
         count++
         console.log(count);
 
-        function resetCount(){
+        function resetCount() {
             count = 0;
         }
 

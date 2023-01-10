@@ -82,7 +82,7 @@ button{
 .container{
   display: grid;
   height: 100vh;
-  grid-template-rows: 0.5fr, 2fr, 2fr;
+
   display: inline-block;
   overflow-x: hidden;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.32) 50%, rgba(37, 165, 151, 0) 50%);
@@ -126,7 +126,7 @@ nav{
   overflow-x: hidden;
   color: white;
   display: flex;
-  height: 5em;
+  height: 10vh;
   align-items: center;
   justify-content: space-around;
   width: 100vw;
@@ -209,7 +209,7 @@ nav{
   overflow-x: hidden;
   width: 100%;
   margin: 0;
-  height: 70%;
+  margin-bottom: 2em;
  
 }
 
@@ -324,13 +324,17 @@ font-size: 1.1em;
 
 /*  INFO DISPLAY  */
 
+.infoDis{
+  height: fit-content;
+  margin-bottom: 2em;
+}
+
 .infoDisplayDiv{
   background: linear-gradient(180deg, #8051D6 0%, #492286 100%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   position: relative;
-  top: -7em;
   gap: 2em;
   column-gap: 4em;
   width: max-content;
@@ -874,9 +878,99 @@ height: 3em;
   .bodyDiv_input{
     position: relative;
   }
-  
 
   
+  .bodyDiv_h1Text > h1{
+    font-size: 1.3em;
+    position: relative;
+    left: 1em;
+  }
+
+  .navDiv_logoDiv > span{
+    font-weight: bolder;
+  }
+
+  .navDiv_buttonDiv > button{
+    position: relative;
+    right: 1.2em;
+    padding: 0.5em;
+  
+  }
+
+  .bodyDiv_h1Text{
+    margin: auto;
+    position: relative;
+    left: -1.5em;
+    
+    
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1.5em;
+  }
+
+  .bodyDiv_paraText > h3{
+    font-weight: 300;
+    font-size: 1.2em;
+    position: relative;
+    left: 0.5em;
+    width: 19em;
+    margin: auto;
+   
+
+    
+  }
+  .bodyDiv{
+    padding: 0.5em;
+  }
+
+  .bodyDiv_input{
+    left: 1em;
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 0.6fr 0.4fr;
+  }
+ 
+  
+  .bodyDiv_input > input{
+    font-size: 1em;
+    padding: 0 0.5em 0 0.4em;
+    height: 3.1em;
+    width: 22em;
+    position: relative;
+  }
+  
+  .bodyDiv_input > input::placeholder{
+    font-size: 0.7em;
+  }
+
+
+   .fa-ethereumlogo{
+     font-size: 1.2em;
+
+   }
+   
+
+  .bodyDiv_inputText{
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    font-weight: 400;
+    
+  }
+  
+  .fa-bars{
+    margin-right: 0.5em;
+    color: rgb(255, 255, 255);
+  }
+
+  .bodyDiv_inputText > div{
+  padding: 0.5em;
+}
+
+
   .bodyDiv_input > input::placeholder{
     font-size: 0.7em;
   }
@@ -889,20 +983,27 @@ height: 3em;
   .ethlogoSearch{
  grid-template-columns: 0.3fr 0.7fr;
   }*/
+
+
+  .infoDis{
+    height: fit-content;
+ 
+  }
   
 
   .infoDisplayDiv{
+
     position: relative;
     display: grid;
     grid-template-columns:1fr;
     grid-template-rows: repeat(6, 1fr);
     position: relative;
-    top: -5em;
     gap: 2em;
    border-radius: 0.3em;
     width: max-content;
     margin: auto;
     padding: 1em;
+    
    
   }
 
@@ -1070,6 +1171,7 @@ height: 3em;
   }
 
   .bodyDiv_input{
+    left: 1em;
     position: relative;
     margin-top: 2em;
     margin-bottom: 1em;
@@ -1084,6 +1186,7 @@ height: 3em;
     padding: 0 0.5em 0 0.4em;
     height: 3.1em;
     width: 22em;
+    position: relative;
   }
   
   .bodyDiv_input > input::placeholder{
@@ -1128,14 +1231,18 @@ font-size: 1.1em;
 }
 
 
+.infoDis{
+  height: fit-content;
+
+}
+
   .infoDisplayDiv{
+
     box-shadow: -0.2em 0 .4em grey;
     position: relative;
     display: grid;
     grid-template-columns:1fr;
     grid-template-rows: repeat(6, 1fr);
-    position: relative;
-    top: -10em;
     gap: 1em;
     width: max-content;
     margin: auto;
