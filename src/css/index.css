@@ -819,6 +819,12 @@ justify-content: space-between;
 
 
 
+
+
+
+
+
+
 /*  +++++ MEDIA QUERIES +++++  */
 
 
@@ -1127,10 +1133,22 @@ height: 3em;
    overflow-x: hidden;
   }
 
+  /* .bodyDiv_h1Text{
+    background-color: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  } */
+
   .bodyDiv_h1Text > h1{
     font-size: 1.3em;
     position: relative;
-   
+   left: 20px;
+  }
+
+  .bodyDiv_paraText{
+    position: relative;
+    left: -10px;
   }
 
   .navDiv_logoDiv > span{
